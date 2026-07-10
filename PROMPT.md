@@ -1,0 +1,1 @@
+- IMPORTANTE LEE AGENTS.md y empieza el proyecto
