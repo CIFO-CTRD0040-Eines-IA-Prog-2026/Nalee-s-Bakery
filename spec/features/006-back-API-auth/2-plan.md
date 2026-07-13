@@ -21,5 +21,5 @@
 
 ## Referencias
 - **Context7 (MCP)**: sintaxis de `express-session` y `bcrypt`.
-- **Skill mysql**: consultas parametrizadas (`pool.execute` con `?`), nunca concatenar el email.
+- **Skill SQLite**: consultas parametrizadas (`pool.execute` con `?`), nunca concatenar el email.
 - **Skill fetch-api**: forma de las respuestas y códigos de estado que el front consumirá.

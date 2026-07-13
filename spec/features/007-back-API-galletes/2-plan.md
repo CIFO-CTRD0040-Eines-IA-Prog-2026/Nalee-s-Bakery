@@ -16,6 +16,6 @@
 - 005 (servidor + pool) hecho. BD `nalees_bakery` con la tabla `cookies` poblada (seed de 004).
 
 ## Referencias
-- **Skill mysql**: consultas SELECT y mapeo de filas.
+- **Skill SQLite**: consultas SELECT y mapeo de filas.
 - **Skill fetch-api**: patrón de respuesta para el frontend.
 - **Context7 (MCP)**: sintaxis de rutas GET en Express.

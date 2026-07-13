@@ -29,7 +29,7 @@ El servidor calcula:
 - Total = subtotal - descuento.
 - `status` inicial: `"pending"`.
 
-Toda la operación se ejecuta dentro de una transacción SQL: si falla algo, no se crea la orden.
+Toda la operación se ejecuta dentro de una transacción SQLite: si falla algo, no se crea la orden.
 
 ## Criterios de aceptación
 [ ] Sin sesión, cualquier ruta `/api/orders` responde 401 (middleware de la 006).

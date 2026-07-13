@@ -1,6 +1,6 @@
 # Tareas — 005 Servidor Express y conexión a la BD
 
-[ ] T1 — `backend/package.json`: dependencias (express, mysql2, dotenv) y scripts (start, dev).
+[ ] T1 — `backend/package.json`: dependencias (express, SQLite, dotenv) y scripts (start, dev).
 [ ] T2 — `backend/.gitignore` (node_modules/) y `backend/.env.example` con DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, PORT.
 [ ] T2b — `backend/.env` local: DB_PATH=./data/nalees_bakery.db, PORT=3000, SESSION_SECRET=...
 [ ] T3 — `backend/db/connection.js`: conexión SQLite con better-sqlite3, creación automática de esquema y seed.
