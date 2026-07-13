@@ -20,10 +20,10 @@ Paso final del ciclo: el frontend (`public/`) deja de trabajar contra localStora
 
 ## Criterios de aceptación
 [ ] Al abrir la página, el catálogo se carga desde la BD vía `GET /api/cookies` (no HTML estático).
-[ ] Registro con datos nuevos crea el usuario en MySQL y redirige a `/` con sesión.
+[ ] Registro con datos nuevos crea el usuario en SQLite y redirige a `/` con sesión.
 [ ] Login correcto lleva a `/`; login incorrecto muestra "Email o contraseña incorrectos".
 [ ] "Cerrar sesión" hace logout y redirige a `/login`.
-[ ] Al hacer un pedido válido, se crea en MySQL con las líneas y cálculos correctos.
+[ ] Al hacer un pedido válido, se crea en SQLite con las líneas y cálculos correctos.
 [ ] Dos usuarios ven cada uno solo sus pedidos (aislamiento de la 008).
 [ ] No queda ningún rastro del mock anterior: ni `localStorage` para sesión, ni datos quemados en HTML.
 [ ] Toda la navegación usa URLs limpias (sin `.html`).
