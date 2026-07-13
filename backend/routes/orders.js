@@ -138,4 +138,38 @@ router.post('/api/orders', async (req, res) => {
   }
 });
 
+router.patch('/api/orders/:id/cancel', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const [orders] = await pool.query(
+      'SELECT id, user_id, status FROM orders WHERE id = ?',
+      [id]
+    );
+
+    if (orders.length === 0) {
+      return res.status(404).json({ error: 'Pedido no encontrado' });
+    }
+
+    const order = orders[0];
+
+    if (order.user_id !== req.session.userId) {
+      return res.status(403).json({ error: 'No autorizado' });
+    }
+
+    if (order.status !== 'pending') {
+      return res.status(400).json({ error: 'Solo se pueden cancelar pedidos pendientes' });
+    }
+
+    await pool.query(
+      "UPDATE orders SET status = 'cancelled' WHERE id = ?",
+      [id]
+    );
+
+    res.json({ message: 'Pedido cancelado correctamente' });
+  } catch (err) {
+    console.error('Error cancelando pedido:', err);
+    res.status(500).json({ error: 'Error al cancelar el pedido' });
+  }
+});
+
 module.exports = router;

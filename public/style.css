@@ -592,6 +592,118 @@ header {
   color: var(--color-texto-claro);
 }
 
+.mis-pedidos {
+  padding: 2rem 1rem 4rem;
+  background: var(--color-crema);
+}
+
+.mis-pedidos__container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mis-pedidos__title {
+  text-align: center;
+  font-size: var(--fs-h2);
+  color: var(--color-marron-oscuro);
+  margin-bottom: 1.5rem;
+}
+
+.mis-pedidos__empty {
+  text-align: center;
+  color: var(--color-texto-claro);
+  font-size: var(--fs-small);
+}
+
+.mis-pedidos__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-blanco);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.8rem;
+  box-shadow: var(--shadow);
+  gap: 1rem;
+}
+
+.mis-pedidos__item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mis-pedidos__item-id {
+  font-weight: 700;
+  color: var(--color-marron-oscuro);
+  font-size: var(--fs-small);
+}
+
+.mis-pedidos__item-fecha {
+  color: var(--color-texto-claro);
+  font-size: var(--fs-small);
+}
+
+.mis-pedidos__item-total {
+  font-weight: 600;
+  color: var(--color-rosa);
+  font-size: var(--fs-small);
+}
+
+.mis-pedidos__status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+}
+
+.mis-pedidos__status--pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.mis-pedidos__status--cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.mis-pedidos__status--confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.mis-pedidos__status--shipped {
+  background: #d4edda;
+  color: #155724;
+}
+
+.mis-pedidos__cancel-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--color-rosa);
+  background: var(--color-blanco);
+  color: var(--color-rosa);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.mis-pedidos__cancel-btn:hover {
+  background: var(--color-rosa);
+  color: var(--color-blanco);
+}
+
+.mis-pedidos__cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .ubicacion {
   padding: 4rem 1rem;
 }

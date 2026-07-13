@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         authUser.textContent = user.name;
         authUser.style.display = 'inline';
         logoutLink.style.display = 'inline';
+        if (typeof cargarPedidos === 'function') cargarPedidos();
       }
     } catch (e) {}
   }
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       authLink.style.display = 'inline';
       authUser.style.display = 'none';
       logoutLink.style.display = 'none';
+      if (typeof ocultarPedidos === 'function') ocultarPedidos();
     });
   }
 

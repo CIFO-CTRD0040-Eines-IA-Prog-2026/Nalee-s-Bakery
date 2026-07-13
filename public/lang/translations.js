@@ -72,7 +72,13 @@ var translations = {
     auth_confirmar: 'Confirmar contraseña',
     auth_crear_cuenta: 'Crear cuenta',
     auth_ya_cuenta: '¿Ya tienes cuenta?',
-    auth_entrar_link: 'Iniciar sesión'
+    auth_entrar_link: 'Iniciar sesión',
+    mis_pedidos_title: 'Mis Pedidos',
+    mis_pedidos_vacio: 'No tienes pedidos todavía',
+    mis_pedidos_pending: 'Pendiente',
+    mis_pedidos_cancelled: 'Cancelado',
+    mis_pedidos_confirmed: 'Confirmado',
+    mis_pedidos_shipped: 'Enviado'
   },
 
   en: {
@@ -148,6 +154,12 @@ var translations = {
     auth_confirmar: 'Confirm password',
     auth_crear_cuenta: 'Create account',
     auth_ya_cuenta: 'Already have an account?',
-    auth_entrar_link: 'Sign in'
+    auth_entrar_link: 'Sign in',
+    mis_pedidos_title: 'My Orders',
+    mis_pedidos_vacio: 'No orders yet',
+    mis_pedidos_pending: 'Pending',
+    mis_pedidos_cancelled: 'Cancelled',
+    mis_pedidos_confirmed: 'Confirmed',
+    mis_pedidos_shipped: 'Shipped'
   }
 };
