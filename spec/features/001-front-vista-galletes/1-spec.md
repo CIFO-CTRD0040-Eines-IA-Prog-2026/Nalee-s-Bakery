@@ -25,7 +25,7 @@ Pantalla principal on l'usuari pot veure el catàleg de galletes artesanes, sele
 | `galleta__img--red-velvet` | Red Velvet | Galleta suave de cacao con cobertura de queso | 3.00 € |
 | `galleta__img--mantequilla` | Mantequilla | Galleta de mantequilla tradicional, crujiente y suave | 2.00 € |
 | `galleta__img--jengibre` | Jengibre | Galleta especiada de jengibre con un toque de canela | 2.50 € |
-| `galleta__img--peanut-butter` | Peanut Butter | Galleta cremosa de cacahuete con pepitas de chocolate | 3.00 € |
+| `galleta__img--peanut-butter` | Peanut Butter | Galleta cremosa de cacahuete | 3.00 € |
 
 ## Comportament esperat
 1. L'usuari veu el catàleg complet
