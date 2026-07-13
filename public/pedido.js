@@ -69,12 +69,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  btnEnviar.addEventListener('click', () => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      window.location.href = 'login.html';
+  btnEnviar.addEventListener('click', async () => {
+    const items = [];
+    galletas.forEach((g) => {
+      const input = g.querySelector('.galleta__cantidad');
+      const cantidad = parseInt(input.value, 10) || 0;
+      if (cantidad > 0) {
+        const id = g.dataset.sabor;
+        items.push({ cookie_id: id, quantity: cantidad });
+      }
+    });
+
+    if (items.length === 0) return;
+
+    try {
+      const res = await fetch('/api/auth/me', { credentials: 'same-origin' });
+      if (!res.ok) {
+        window.location.href = '/login';
+        return;
+      }
+    } catch (e) {
+      window.location.href = '/login';
       return;
     }
-    alert('Pedido enviado correctamente.');
+
+    const slugToId = {
+      'avena': 1, 'chocolate-chips': 2, 'red-velvet': 3,
+      'mantequilla': 4, 'jengibre': 5, 'peanut-butter': 6
+    };
+
+    const payload = {
+      items: items.map(i => ({
+        cookie_id: slugToId[i.cookie_id] || i.cookie_id,
+        quantity: i.quantity
+      }))
+    };
+
+    try {
+      const res = await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        credentials: 'same-origin'
+      });
+
+      if (res.status === 401) {
+        window.location.href = '/login';
+        return;
+      }
+
+      if (res.ok) {
+        alert('Pedido enviado correctamente');
+        galletas.forEach((g) => {
+          g.querySelector('.galleta__cantidad').value = 0;
+        });
+        actualizarResumen();
+      } else {
+        const data = await res.json();
+        alert(data.error || 'Error al enviar el pedido');
+      }
+    } catch (e) {
+      alert('Error de conexión');
+    }
   });
 });

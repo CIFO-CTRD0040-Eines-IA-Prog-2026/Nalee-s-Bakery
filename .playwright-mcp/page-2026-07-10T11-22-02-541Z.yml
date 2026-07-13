@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - textbox "Search" [ref=e2]
+  - generic [ref=e3]:
+    - heading [level=1] [ref=e4]:
+      - link "~" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - text: /
+    - list [ref=e6]:
+      - listitem [ref=e7]:
+        - link "public 7/10/2026 1:05:48 PM" [ref=e8] [cursor=pointer]:
+          - /url: /public
+          - generic [ref=e9]: public
+          - generic [ref=e10]: 7/10/2026 1:05:48 PM
+      - listitem [ref=e11]:
+        - link "spec 7/10/2026 12:42:25 PM" [ref=e12] [cursor=pointer]:
+          - /url: /spec
+          - generic [ref=e13]: spec
+          - generic [ref=e14]: 7/10/2026 12:42:25 PM
+      - listitem [ref=e15]:
+        - link "AGENTS.md 514 7/10/2026 12:42:35 PM" [ref=e16] [cursor=pointer]:
+          - /url: /AGENTS.md
+          - generic [ref=e17]: AGENTS.md
+          - generic [ref=e18]: "514"
+          - generic [ref=e19]: 7/10/2026 12:42:35 PM
+      - listitem [ref=e20]:
+        - link "opencode.json 384 7/10/2026 12:42:34 PM" [ref=e21] [cursor=pointer]:
+          - /url: /opencode.json
+          - generic [ref=e22]: opencode.json
+          - generic [ref=e23]: "384"
+          - generic [ref=e24]: 7/10/2026 12:42:34 PM
+      - listitem [ref=e25]:
+        - link "PROMPT.md 48 7/10/2026 12:57:31 PM" [ref=e26] [cursor=pointer]:
+          - /url: /PROMPT.md
+          - generic [ref=e27]: PROMPT.md
+          - generic [ref=e28]: "48"
+          - generic [ref=e29]: 7/10/2026 12:57:31 PM
+      - listitem [ref=e30]:
+        - link "skills-lock.json 35 7/10/2026 12:42:37 PM" [ref=e31] [cursor=pointer]:
+          - /url: /skills-lock.json
+          - generic [ref=e32]: skills-lock.json
+          - generic [ref=e33]: "35"
+          - generic [ref=e34]: 7/10/2026 12:42:37 PM
+      - listitem [ref=e35]:
+        - link "wireframe.excalidraw 67138 7/8/2026 2:09:42 PM" [ref=e36] [cursor=pointer]:
+          - /url: /wireframe.excalidraw
+          - generic [ref=e37]: wireframe.excalidraw
+          - generic [ref=e38]: "67138"
+          - generic [ref=e39]: 7/8/2026 2:09:42 PM

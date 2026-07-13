@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión — NALEE's Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">NALEE's Bakery</a>
+      <button class="header__menu-toggle" id="menu-toggle" aria-label="Menú">☰</button>
+      <nav class="header__nav" id="header-nav">
+        <a href="/#galletas" data-i18n="nav_galletas">Galletas</a>
+        <a href="/#galeria" data-i18n="nav_galeria">Galería</a>
+        <a href="/#nosotros" data-i18n="nav_nosotros">Sobre Nosotros</a>
+        <a href="/#contacto" data-i18n="nav_contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="auth-card__icon">🍪</div>
+      <h1 class="auth-card__title" data-i18n="auth_login_title">Iniciar sesión</h1>
+
+      <form id="form-login" novalidate>
+        <div class="auth-card__field">
+          <label for="email" data-i18n="auth_email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          <p class="auth-card__error" id="error-email"></p>
+        </div>
+
+        <div class="auth-card__field">
+          <label for="password" data-i18n="auth_password">Contraseña</label>
+          <input type="password" id="password" name="password" required minlength="4" placeholder="••••••••">
+          <p class="auth-card__error" id="error-password"></p>
+        </div>
+
+        <p class="auth-card__error auth-card__error--general" id="login-error"></p>
+
+        <button type="submit" class="auth-card__btn" data-i18n="auth_entrar">Entrar</button>
+      </form>
+
+      <p class="auth-card__link">
+        <span data-i18n="auth_no_cuenta">¿No tienes cuenta?</span>
+        <a href="/registro" data-i18n="auth_crear">Crear cuenta</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="lang/translations.js"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

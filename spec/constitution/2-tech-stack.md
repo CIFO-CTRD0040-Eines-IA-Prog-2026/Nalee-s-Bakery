@@ -10,7 +10,12 @@
 ## Execució
 - Obrir `index.html` al navegador (Live Server).
 
-## Backend (pendent)
+## Backend
+- Node.js (>=18) amb Express.
+- SQLite amb better-sqlite3 (BD local a `backend/data/`).
+- Esquema i seed automàtics en arrencar el servidor.
+- API REST a `/api/*`.
+- Autenticació amb sessions (cookie httpOnly + express-session).
 
 ## Documentació
 - Sintaxi actualitzada amb el MCP Context7.

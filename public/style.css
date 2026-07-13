@@ -175,14 +175,19 @@ header {
   background: var(--color-rosa-claro);
 }
 
-.header__auth-link {
-  color: var(--color-rosa);
+.header__nav-link--login {
+  background-color: var(--color-rosa);
+  color: var(--color-crema);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
   font-weight: 600;
   font-size: var(--fs-small);
+  transition: background-color 0.3s ease;
 }
 
-.header__auth-link:hover {
-  color: var(--color-rosa-oscuro);
+.header__nav-link--login:hover {
+  background-color: var(--color-rosa-oscuro);
+  color: var(--color-crema);
 }
 
 .header__auth-user {
@@ -481,21 +486,13 @@ header {
 
 .galeria__item img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
   transition: transform 0.3s;
 }
 
 .galeria__item:hover img {
   transform: scale(1.05);
-}
-
-.galeria__item--destacado {
-  grid-column: 1 / -1;
-}
-
-.galeria__item--destacado img {
-  height: 250px;
 }
 
 .nosotros {
@@ -529,7 +526,7 @@ header {
 
 .nosotros__img img {
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -811,6 +808,140 @@ header {
   color: var(--color-marron-claro);
 }
 
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-overlay--open {
+  display: flex;
+}
+
+.modal {
+  background: var(--color-crema);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-texto-claro);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal__close:hover {
+  color: var(--color-marron-oscuro);
+}
+
+.modal__icon {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.modal__title {
+  text-align: center;
+  font-size: var(--fs-h3);
+  color: var(--color-marron-oscuro);
+  margin-bottom: 1.2rem;
+}
+
+.modal__field {
+  margin-bottom: 0.8rem;
+}
+
+.modal__field label {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-texto-claro);
+  margin-bottom: 0.3rem;
+}
+
+.modal__field input {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--color-marron-claro);
+  border-radius: 8px;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--color-texto);
+  background: var(--color-blanco);
+}
+
+.modal__field input:focus {
+  outline: none;
+  border-color: var(--color-rosa);
+}
+
+.modal__error {
+  font-size: 0.8rem;
+  color: var(--color-rosa-oscuro);
+  min-height: 1rem;
+  margin-top: 0.2rem;
+}
+
+.modal__error--general {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.modal__btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--color-rosa);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 0.5rem;
+}
+
+.modal__btn:hover {
+  background: var(--color-rosa-oscuro);
+}
+
+.modal__link {
+  text-align: center;
+  font-size: var(--fs-small);
+  color: var(--color-texto-claro);
+  margin-top: 1rem;
+}
+
+.modal__link a {
+  color: var(--color-rosa);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal__link a:hover {
+  color: var(--color-rosa-oscuro);
+}
+
 @media (min-width: 480px) {
   :root {
     --fs-h1: 3rem;
@@ -825,13 +956,8 @@ header {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .galeria__item--destacado {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
-  .galeria__item--destacado img {
-    height: 100%;
+  .galeria__item img {
+    height: 200px;
   }
 }
 
@@ -858,10 +984,6 @@ header {
   .galletas__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-  }
-
-  .galeria__grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 
   .nosotros__container {

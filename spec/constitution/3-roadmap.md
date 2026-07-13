@@ -1,23 +1,32 @@
 # Roadmap — NALEE's Bakery
 
-# BLOQUE FRONTEND features
+## BLOQUE FRONTEND (public/)
 
-- TOT ELS ARXIUS DEL FRONTEND A CARPETA PUBLIC
+### 001 — Vista galletes — FET
+- Hero, targetes, galeria, testimonis, contacte, footer, responsive
 
-## 001 — Maquetació — PENDENT
-- [ ] Hero: fons gradient, tipografia, CTA destacat
-- [ ] Imatges: Agafal's de /public/images
-- [ ] Targetes de galletes: grid responsive amb imatge, nom i descripció
-- [ ] Galeria: grid d'imatges 
-- [ ] Testimonis: avatars, text, nom i rol
-- [ ] Formulari de contacte: camps estilitzats i botó
-- [ ] Footer: columnes, enllaços, xarxes socials, newsletter
-- [ ] Responsive: mobile-first, tablet, desktop
+### 002 — Vistes auth — FET
+- login.html, registro.html, validació de formularis
 
-## 002 — Funcionalitats JS — PENDENT
-- [ ] `pedido.js`: selector de galletes, carretó, resum i enviament
-- [ ] `login.html`: formulari d'inici de sessió
-- [ ] `registro.html`: formulari de registre
-- [ ] Navegació condicional segons sessió
-- [ ] Selector d'idioma (ES/EN)
-- [ ] Scroll suau a seccions
+### 003 — Interaccions — FET
+- Selector d'idioma, quantitats, resum de comanda, navegació
+
+## BLOQUE BACKEND (backend/)
+
+### 004 — Disseny BD — FET
+- SQLite, 4 taules (users, cookies, orders, order_lines), seed automàtic
+
+### 005 — Servidor Express — FET
+- URLs netes, estàtics, health check, sessions
+
+### 006 — API Auth — FET
+- Registre, login, logout, sessió amb bcrypt
+
+### 007 — API Galletes — FET
+- GET /api/cookies (catàleg públic)
+
+### 008 — API Comandes — FET
+- POST/GET /api/orders amb transaccions
+
+### 009 — Connexió front-backend — FET
+- Modal login, fetch real, sense localStorage

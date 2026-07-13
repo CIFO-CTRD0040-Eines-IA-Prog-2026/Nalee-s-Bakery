@@ -15,11 +15,11 @@
     <div class="header__container">
       <a href="#" class="header__logo">NALEE's Bakery</a>
       <nav class="header__nav" id="header-nav">
-        <a href="#galletas" class="header__link">Galletas</a>
-        <a href="#galeria" class="header__link">Galería</a>
-        <a href="#nosotros" class="header__link">Sobre Nosotros</a>
-        <a href="#testimonios" class="header__link">Testimonios</a>
-        <a href="#contacto" class="header__link">Contacto</a>
+        <a href="#galletas" class="header__link" data-i18n="nav_galletas">Galletas</a>
+        <a href="#galeria" class="header__link" data-i18n="nav_galeria">Galería</a>
+        <a href="#nosotros" class="header__link" data-i18n="nav_nosotros">Sobre Nosotros</a>
+        <a href="#testimonios" class="header__link" data-i18n="nav_testimonios">Testimonios</a>
+        <a href="#contacto" class="header__link" data-i18n="nav_contacto">Contacto</a>
       </nav>
       <div class="header__actions">
         <div class="lang-selector" id="lang-selector">
@@ -29,9 +29,9 @@
             <button class="lang-option" data-lang="en">EN</button>
           </div>
         </div>
-        <a href="login.html" class="header__auth-link" id="auth-link">Iniciar sesión</a>
+        <a href="#" class="header__nav-link--login" id="auth-link" data-i18n="nav_login">Iniciar sesión</a>
         <span class="header__auth-user" id="auth-user" style="display:none;"></span>
-        <a href="#" class="header__logout" id="logout-link" style="display:none;">Cerrar sesión</a>
+        <a href="#" class="header__logout" id="logout-link" style="display:none;" data-i18n="nav_cerrar">Cerrar sesión</a>
       </div>
       <button class="header__menu-btn" id="menu-btn" aria-label="Menú de navegación">
         <span></span><span></span><span></span>
@@ -42,20 +42,20 @@
   <main>
     <section class="hero" id="hero">
       <div class="hero__container">
-        <h1 class="hero__title">Galletas artesanas con amor</h1>
-        <p class="hero__subtitle">Descubre el sabor auténtico de nuestras recetas tradicionales, hechas con ingredientes naturales y mucho cariño.</p>
-        <a href="#galletas" class="hero__cta">Descubre nuestras galletas</a>
+        <h1 class="hero__title" data-i18n="hero_title">Galletas artesanas con amor</h1>
+        <p class="hero__subtitle" data-i18n="hero_subtitle">Descubre el sabor auténtico de nuestras recetas tradicionales, hechas con ingredientes naturales y mucho cariño.</p>
+        <a href="#galletas" class="hero__cta" data-i18n="hero_cta">Descubre nuestras galletas</a>
       </div>
     </section>
 
     <section class="galletas" id="galletas">
       <div class="galletas__container">
-        <h2 class="galletas__title">Nuestras Galletas</h2>
+        <h2 class="galletas__title" data-i18n="galletas_title">Nuestras Galletas</h2>
         <div class="galletas__grid" id="galletas-grid">
           <article class="galleta" data-sabor="avena" data-precio="2.50">
             <div class="galleta__img galleta__img--avena"></div>
-            <h3 class="galleta__nombre">Avena</h3>
-            <p class="galleta__desc">Galleta de avena con pasas y un toque de canela</p>
+            <h3 class="galleta__nombre" data-i18n="galleta_avena_nombre">Avena</h3>
+            <p class="galleta__desc" data-i18n="galleta_avena_desc">Galleta de avena con pasas y un toque de canela</p>
             <p class="galleta__precio">2.50 €</p>
             <div class="galleta__selector">
               <button class="galleta__btn galleta__btn--menos" aria-label="Reducir cantidad">−</button>
@@ -65,8 +65,8 @@
           </article>
           <article class="galleta" data-sabor="chocolate-chips" data-precio="2.50">
             <div class="galleta__img galleta__img--chocolate-chips"></div>
-            <h3 class="galleta__nombre">Chocolate Chips</h3>
-            <p class="galleta__desc">Galleta clásica con pepitas de chocolate</p>
+            <h3 class="galleta__nombre" data-i18n="galleta_chocolate_chips_nombre">Chocolate Chips</h3>
+            <p class="galleta__desc" data-i18n="galleta_chocolate_chips_desc">Galleta clásica con pepitas de chocolate</p>
             <p class="galleta__precio">2.50 €</p>
             <div class="galleta__selector">
               <button class="galleta__btn galleta__btn--menos" aria-label="Reducir cantidad">−</button>
@@ -76,8 +76,8 @@
           </article>
           <article class="galleta" data-sabor="red-velvet" data-precio="3.00">
             <div class="galleta__img galleta__img--red-velvet"></div>
-            <h3 class="galleta__nombre">Red Velvet</h3>
-            <p class="galleta__desc">Galleta suave de cacao con cobertura de queso</p>
+            <h3 class="galleta__nombre" data-i18n="galleta_red_velvet_nombre">Red Velvet</h3>
+            <p class="galleta__desc" data-i18n="galleta_red_velvet_desc">Galleta suave de cacao con cobertura de queso</p>
             <p class="galleta__precio">3.00 €</p>
             <div class="galleta__selector">
               <button class="galleta__btn galleta__btn--menos" aria-label="Reducir cantidad">−</button>
@@ -87,8 +87,8 @@
           </article>
           <article class="galleta" data-sabor="mantequilla" data-precio="2.00">
             <div class="galleta__img galleta__img--mantequilla"></div>
-            <h3 class="galleta__nombre">Mantequilla</h3>
-            <p class="galleta__desc">Galleta de mantequilla tradicional, crujiente y suave</p>
+            <h3 class="galleta__nombre" data-i18n="galleta_mantequilla_nombre">Mantequilla</h3>
+            <p class="galleta__desc" data-i18n="galleta_mantequilla_desc">Galleta de mantequilla tradicional, crujiente y suave</p>
             <p class="galleta__precio">2.00 €</p>
             <div class="galleta__selector">
               <button class="galleta__btn galleta__btn--menos" aria-label="Reducir cantidad">−</button>
@@ -98,8 +98,8 @@
           </article>
           <article class="galleta" data-sabor="jengibre" data-precio="2.50">
             <div class="galleta__img galleta__img--jengibre"></div>
-            <h3 class="galleta__nombre">Jengibre</h3>
-            <p class="galleta__desc">Galleta especiada de jengibre con un toque de canela</p>
+            <h3 class="galleta__nombre" data-i18n="galleta_jengibre_nombre">Jengibre</h3>
+            <p class="galleta__desc" data-i18n="galleta_jengibre_desc">Galleta especiada de jengibre con un toque de canela</p>
             <p class="galleta__precio">2.50 €</p>
             <div class="galleta__selector">
               <button class="galleta__btn galleta__btn--menos" aria-label="Reducir cantidad">−</button>
@@ -109,8 +109,8 @@
           </article>
           <article class="galleta" data-sabor="peanut-butter" data-precio="3.00">
             <div class="galleta__img galleta__img--peanut-butter"></div>
-            <h3 class="galleta__nombre">Peanut Butter</h3>
-            <p class="galleta__desc">Galleta cremosa de cacahuete con pepitas de chocolate</p>
+            <h3 class="galleta__nombre" data-i18n="galleta_peanut_butter_nombre">Peanut Butter</h3>
+            <p class="galleta__desc" data-i18n="galleta_peanut_butter_desc">Galleta cremosa de cacahuete con pepitas de chocolate</p>
             <p class="galleta__precio">3.00 €</p>
             <div class="galleta__selector">
               <button class="galleta__btn galleta__btn--menos" aria-label="Reducir cantidad">−</button>
@@ -124,22 +124,22 @@
 
     <section class="pedido-resumen" id="pedido-resumen" style="display:none;">
       <div class="pedido-resumen__container">
-        <h2 class="pedido-resumen__title">Tu Pedido</h2>
+        <h2 class="pedido-resumen__title" data-i18n="pedido_title">Tu Pedido</h2>
         <ul class="pedido-resumen__lista" id="pedido-lista"></ul>
         <div class="pedido-resumen__totales">
-          <p class="pedido-resumen__linea">Subtotal: <span id="pedido-subtotal">0.00</span> €</p>
-          <p class="pedido-resumen__linea">Descuento: <span id="pedido-descuento">0.00</span> €</p>
-          <p class="pedido-resumen__linea pedido-resumen__linea--total">Total: <span id="pedido-total">0.00</span> €</p>
+          <p class="pedido-resumen__linea" data-i18n="pedido_subtotal">Subtotal: <span id="pedido-subtotal">0.00</span> €</p>
+          <p class="pedido-resumen__linea" data-i18n="pedido_descuento">Descuento: <span id="pedido-descuento">0.00</span> €</p>
+          <p class="pedido-resumen__linea pedido-resumen__linea--total" data-i18n="pedido_total">Total: <span id="pedido-total">0.00</span> €</p>
         </div>
-        <button class="pedido-resumen__enviar" id="pedido-enviar">Enviar pedido</button>
+        <button class="pedido-resumen__enviar" id="pedido-enviar" data-i18n="pedido_enviar">Enviar pedido</button>
       </div>
     </section>
 
     <section class="galeria" id="galeria">
       <div class="galeria__container">
-        <h2 class="galeria__title">Galería</h2>
+        <h2 class="galeria__title" data-i18n="galeria_title">Galería</h2>
         <div class="galeria__grid">
-          <div class="galeria__item galeria__item--destacado">
+          <div class="galeria__item">
             <img src="images/Galletas/chocolate-chips.jpg" alt="Galleta de chocolate chips" loading="lazy">
           </div>
           <div class="galeria__item">
@@ -164,9 +164,9 @@
     <section class="nosotros" id="nosotros">
       <div class="nosotros__container">
         <div class="nosotros__content">
-          <h2 class="nosotros__title">Sobre Nosotros</h2>
-          <p class="nosotros__text">En NALEE's Bakery llevamos más de 10 años endulzando la vida de nuestros clientes. Cada galleta está hecha a mano con ingredientes seleccionados, siguiendo recetas tradicionales que han pasado de generación en generación.</p>
-          <p class="nosotros__text">Nuestra pasión por la repostería artesana nos lleva a innovar constantemente, creando sabores únicos que combinan lo mejor de la tradición con un toque moderno.</p>
+          <h2 class="nosotros__title" data-i18n="nosotros_title">Sobre Nosotros</h2>
+          <p class="nosotros__text" data-i18n="nosotros_p1">En NALEE's Bakery llevamos más de 10 años endulzando la vida de nuestros clientes. Cada galleta está hecha a mano con ingredientes seleccionados, siguiendo recetas tradicionales que han pasado de generación en generación.</p>
+          <p class="nosotros__text" data-i18n="nosotros_p2">Nuestra pasión por la repostería artesana nos lleva a innovar constantemente, creando sabores únicos que combinan lo mejor de la tradición con un toque moderno.</p>
         </div>
         <div class="nosotros__img">
           <img src="images/Nosotros/Nalee.jpg" alt="Nalee horneando galletas" loading="lazy">
@@ -176,31 +176,31 @@
 
     <section class="testimonios" id="testimonios">
       <div class="testimonios__container">
-        <h2 class="testimonios__title">Lo que dicen nuestros clientes</h2>
+        <h2 class="testimonios__title" data-i18n="testimonios_title">Lo que dicen nuestros clientes</h2>
         <div class="testimonios__grid">
           <article class="testimonio">
             <div class="testimonio__avatar">
               <img src="images/Avatares/Ana-Martinez.avif" alt="Ana Martínez" loading="lazy">
             </div>
-            <p class="testimonio__texto">"Las mejores galletas que he probado. La red velvet es increíble, y el trato es siempre excelente."</p>
-            <p class="testimonio__nombre">Ana Martínez</p>
-            <p class="testimonio__rol">Clienta habitual</p>
+            <p class="testimonio__texto" data-i18n="testimonio_ana_texto">"Las mejores galletas que he probado. La red velvet es increíble, y el trato es siempre excelente."</p>
+            <p class="testimonio__nombre" data-i18n="testimonio_ana_nombre">Ana Martínez</p>
+            <p class="testimonio__rol" data-i18n="testimonio_ana_rol">Clienta habitual</p>
           </article>
           <article class="testimonio">
             <div class="testimonio__avatar">
               <img src="images/Avatares/Carlos-Lopez.avif" alt="Carlos López" loading="lazy">
             </div>
-            <p class="testimonio__texto">"Hago pedidos cada semana para la oficina. A todos les encantan, especialmente las de chocolate chips."</p>
-            <p class="testimonio__nombre">Carlos López</p>
-            <p class="testimonio__rol">Cliente corporativo</p>
+            <p class="testimonio__texto" data-i18n="testimonio_carlos_texto">"Hago pedidos cada semana para la oficina. A todos les encantan, especialmente las de chocolate chips."</p>
+            <p class="testimonio__nombre" data-i18n="testimonio_carlos_nombre">Carlos López</p>
+            <p class="testimonio__rol" data-i18n="testimonio_carlos_rol">Cliente corporativo</p>
           </article>
           <article class="testimonio">
             <div class="testimonio__avatar">
               <img src="images/Avatares/Maria-Garcia.avif" alt="Maria García" loading="lazy">
             </div>
-            <p class="testimonio__texto">"El sabor casero me transporta a la cocina de mi abuela. Calidad y cariño en cada bocado."</p>
-            <p class="testimonio__nombre">Maria García</p>
-            <p class="testimonio__rol">Clienta fiel</p>
+            <p class="testimonio__texto" data-i18n="testimonio_maria_texto">"El sabor casero me transporta a la cocina de mi abuela. Calidad y cariño en cada bocado."</p>
+            <p class="testimonio__nombre" data-i18n="testimonio_maria_nombre">Maria García</p>
+            <p class="testimonio__rol" data-i18n="testimonio_maria_rol">Clienta fiel</p>
           </article>
         </div>
       </div>
@@ -209,15 +209,15 @@
     <section class="ubicacion" id="ubicacion">
       <div class="ubicacion__container">
         <div class="ubicacion__info">
-          <h2 class="ubicacion__title">Visítanos</h2>
-          <p class="ubicacion__direccion">Calle del Dulce, 42, 08001 Barcelona</p>
+          <h2 class="ubicacion__title" data-i18n="ubicacion_title">Visítanos</h2>
+          <p class="ubicacion__direccion" data-i18n="ubicacion_direccion">Calle del Dulce, 42, 08001 Barcelona</p>
           <p class="ubicacion__horario">
-            <strong>Horario:</strong><br>
-            Lun–Vie: 9:00 – 20:00<br>
-            Sáb: 10:00 – 21:00<br>
-            Dom: 10:00 – 14:00
+            <strong data-i18n="ubicacion_horario_label">Horario:</strong><br>
+            <span data-i18n="ubicacion_horario_line1">Lun–Vie: 9:00 – 20:00</span><br>
+            <span data-i18n="ubicacion_horario_line2">Sáb: 10:00 – 21:00</span><br>
+            <span data-i18n="ubicacion_horario_line3">Dom: 10:00 – 14:00</span>
           </p>
-          <p class="ubicacion__telefono">Tel: +34 932 123 456</p>
+          <p class="ubicacion__telefono" data-i18n="ubicacion_telefono">Tel: +34 932 123 456</p>
         </div>
         <div class="ubicacion__mapa">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.123!2d2.168!3d41.387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIzJzEzLjIiTiAywrAxMCcwNC44IkU!5e0!3m2!1sca!2ses" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;" allowfullscreen></iframe>
@@ -227,12 +227,12 @@
 
     <section class="contacto" id="contacto">
       <div class="contacto__container">
-        <h2 class="contacto__title">Contacto</h2>
+        <h2 class="contacto__title" data-i18n="contacto_title">Contacto</h2>
         <form class="contacto__form" id="contacto-form">
-          <input type="text" class="contacto__input" placeholder="Nombre" required aria-label="Nombre">
-          <input type="email" class="contacto__input" placeholder="Email" required aria-label="Email">
-          <textarea class="contacto__textarea" placeholder="Mensaje" required aria-label="Mensaje"></textarea>
-          <button type="submit" class="contacto__btn">Enviar mensaje</button>
+          <input type="text" class="contacto__input" placeholder="Nombre" required aria-label="Nombre" data-i18n-placeholder="contacto_nombre">
+          <input type="email" class="contacto__input" placeholder="Email" required aria-label="Email" data-i18n-placeholder="contacto_email">
+          <textarea class="contacto__textarea" placeholder="Mensaje" required aria-label="Mensaje" data-i18n-placeholder="contacto_mensaje"></textarea>
+          <button type="submit" class="contacto__btn" data-i18n="contacto_btn">Enviar mensaje</button>
         </form>
       </div>
     </section>
@@ -242,17 +242,17 @@
     <div class="footer__container">
       <div class="footer__col">
         <h3 class="footer__logo">NALEE's Bakery</h3>
-        <p class="footer__desc">Galletas artesanas hechas con amor y los mejores ingredientes desde 2014.</p>
+        <p class="footer__desc" data-i18n="footer_desc">Galletas artesanas hechas con amor y los mejores ingredientes desde 2014.</p>
       </div>
       <div class="footer__col">
-        <h4 class="footer__title">Enlaces</h4>
-        <a href="#galletas" class="footer__link">Galletas</a>
-        <a href="#galeria" class="footer__link">Galería</a>
-        <a href="#nosotros" class="footer__link">Sobre Nosotros</a>
-        <a href="#contacto" class="footer__link">Contacto</a>
+        <h4 class="footer__title" data-i18n="footer_enlaces">Enlaces</h4>
+        <a href="#galletas" class="footer__link" data-i18n="nav_galletas">Galletas</a>
+        <a href="#galeria" class="footer__link" data-i18n="nav_galeria">Galería</a>
+        <a href="#nosotros" class="footer__link" data-i18n="nav_nosotros">Sobre Nosotros</a>
+        <a href="#contacto" class="footer__link" data-i18n="nav_contacto">Contacto</a>
       </div>
       <div class="footer__col">
-        <h4 class="footer__title">Síguenos</h4>
+        <h4 class="footer__title" data-i18n="footer_siguenos">Síguenos</h4>
         <div class="footer__social">
           <a href="#" class="footer__social-link" aria-label="Facebook">FB</a>
           <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
@@ -260,18 +260,82 @@
         </div>
       </div>
       <div class="footer__col">
-        <h4 class="footer__title">Newsletter</h4>
+        <h4 class="footer__title" data-i18n="footer_newsletter_title">Newsletter</h4>
         <form class="footer__newsletter" id="footer-newsletter">
-          <input type="email" class="footer__newsletter-input" placeholder="Tu email" required aria-label="Email para newsletter">
-          <button type="submit" class="footer__newsletter-btn">Suscribirse</button>
+          <input type="email" class="footer__newsletter-input" placeholder="Tu email" required aria-label="Email para newsletter" data-i18n-placeholder="footer_newsletter_placeholder">
+          <button type="submit" class="footer__newsletter-btn" data-i18n="footer_newsletter_btn">Suscribirse</button>
         </form>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>&copy; 2024 NALEE's Bakery. Todos los derechos reservados.</p>
+      <p data-i18n="footer_copy">&copy; 2024 NALEE's Bakery. Todos los derechos reservados.</p>
     </div>
   </footer>
 
+  <div class="modal-overlay" id="modal-overlay" style="display:none;">
+    <div class="modal" id="auth-modal">
+      <button class="modal__close" id="modal-close" aria-label="Cerrar">&times;</button>
+
+      <div id="modal-login">
+        <div class="modal__icon">🍪</div>
+        <h2 class="modal__title" data-i18n="auth_login_title">Iniciar sesión</h2>
+        <form id="modal-form-login" novalidate>
+          <div class="modal__field">
+            <label for="modal-email" data-i18n="auth_email">Email</label>
+            <input type="email" id="modal-email" name="email" required placeholder="tu@email.com">
+            <p class="modal__error" id="modal-error-email"></p>
+          </div>
+          <div class="modal__field">
+            <label for="modal-password" data-i18n="auth_password">Contraseña</label>
+            <input type="password" id="modal-password" name="password" required minlength="4" placeholder="••••••••">
+            <p class="modal__error" id="modal-error-password"></p>
+          </div>
+          <p class="modal__error modal__error--general" id="modal-login-error"></p>
+          <button type="submit" class="modal__btn" data-i18n="auth_entrar">Entrar</button>
+        </form>
+        <p class="modal__link">
+          <span data-i18n="auth_no_cuenta">¿No tienes cuenta?</span>
+          <a href="#" id="modal-to-registro" data-i18n="auth_crear">Crear cuenta</a>
+        </p>
+      </div>
+
+      <div id="modal-registro" style="display:none;">
+        <div class="modal__icon">👨‍🍳</div>
+        <h2 class="modal__title" data-i18n="auth_registro_title">Crear cuenta</h2>
+        <form id="modal-form-registro" novalidate>
+          <div class="modal__field">
+            <label for="modal-reg-nombre" data-i18n="auth_nombre">Nombre</label>
+            <input type="text" id="modal-reg-nombre" name="name" required placeholder="Tu nombre">
+            <p class="modal__error" id="modal-error-nombre"></p>
+          </div>
+          <div class="modal__field">
+            <label for="modal-reg-email" data-i18n="auth_email">Email</label>
+            <input type="email" id="modal-reg-email" name="email" required placeholder="tu@email.com">
+            <p class="modal__error" id="modal-error-reg-email"></p>
+          </div>
+          <div class="modal__field">
+            <label for="modal-reg-password" data-i18n="auth_password">Contraseña</label>
+            <input type="password" id="modal-reg-password" name="password" required minlength="4" placeholder="••••••••">
+            <p class="modal__error" id="modal-error-reg-password"></p>
+          </div>
+          <div class="modal__field">
+            <label for="modal-reg-confirmar" data-i18n="auth_confirmar">Confirmar contraseña</label>
+            <input type="password" id="modal-reg-confirmar" name="confirmar" required minlength="4" placeholder="••••••••">
+            <p class="modal__error" id="modal-error-confirmar"></p>
+          </div>
+          <p class="modal__error modal__error--general" id="modal-reg-error"></p>
+          <button type="submit" class="modal__btn" data-i18n="auth_crear_cuenta">Crear cuenta</button>
+        </form>
+        <p class="modal__link">
+          <span data-i18n="auth_ya_cuenta">¿Ya tienes cuenta?</span>
+          <a href="#" id="modal-to-login" data-i18n="auth_entrar_link">Iniciar sesión</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="lang/translations.js"></script>
+  <script src="i18n.js"></script>
   <script src="pedido.js"></script>
   <script src="app.js"></script>
 </body>
