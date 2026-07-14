@@ -31,6 +31,6 @@ Sin la API el frontend no podría cifrar contraseñas, mantener sesiones seguras
 - Sintaxis actualizada con el MCP Context7.
 
 ## Convenciones
-- Contenido y código en catalán o castellano.
+- Contenido y código en castellano.
 - Mobile-first.
 - IDs del DOM en kebab-case y estables: son el contrato entre HTML, JS y verificación.
