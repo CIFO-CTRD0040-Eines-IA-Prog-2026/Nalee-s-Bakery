@@ -1,25 +1,56 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const galletas = document.querySelectorAll('.galleta');
-  const resumen = document.getElementById('pedido-resumen');
-  const lista = document.getElementById('pedido-lista');
-  const subtotalEl = document.getElementById('pedido-subtotal');
-  const descuentoEl = document.getElementById('pedido-descuento');
-  const totalEl = document.getElementById('pedido-total');
-  const btnEnviar = document.getElementById('pedido-enviar');
+async function cargarCatalogo() {
+  try {
+    const res = await fetch('/api/cookies');
+    if (!res.ok) throw new Error('Error al cargar el catálogo');
+    const cookies = await res.json();
+
+    cookies.forEach(function (cookie) {
+      var galleta = document.querySelector('.galleta[data-sabor="' + cookie.slug + '"]');
+      if (!galleta) return;
+
+      galleta.dataset.id = cookie.id;
+      galleta.dataset.precio = cookie.price;
+
+      var precioEl = galleta.querySelector('.galleta__precio');
+      if (precioEl) precioEl.textContent = parseFloat(cookie.price).toFixed(2) + ' €';
+
+      var keyBase = 'galleta_' + cookie.slug.replace(/-/g, '_');
+      translations.es[keyBase + '_nombre'] = cookie.name_es;
+      translations.es[keyBase + '_desc'] = cookie.desc_es;
+      translations.en[keyBase + '_nombre'] = cookie.name_en;
+      translations.en[keyBase + '_desc'] = cookie.desc_en;
+    });
+
+    if (typeof applyTranslations === 'function') {
+      applyTranslations(currentLang);
+    }
+  } catch (e) {
+    console.error('Error cargando catálogo:', e);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var galletas = document.querySelectorAll('.galleta');
+  var resumen = document.getElementById('pedido-resumen');
+  var lista = document.getElementById('pedido-lista');
+  var subtotalEl = document.getElementById('pedido-subtotal');
+  var descuentoEl = document.getElementById('pedido-descuento');
+  var totalEl = document.getElementById('pedido-total');
+  var btnEnviar = document.getElementById('pedido-enviar');
 
   function actualizarResumen() {
-    let items = [];
-    let subtotal = 0;
+    var items = [];
+    var subtotal = 0;
 
-    galletas.forEach((g) => {
-      const input = g.querySelector('.galleta__cantidad');
-      const cantidad = parseInt(input.value, 10) || 0;
+    galletas.forEach(function (g) {
+      var input = g.querySelector('.galleta__cantidad');
+      var cantidad = parseInt(input.value, 10) || 0;
       if (cantidad > 0) {
-        const nombre = g.querySelector('.galleta__nombre').textContent;
-        const precio = parseFloat(g.dataset.precio);
-        const totalItem = cantidad * precio;
+        var nombre = g.querySelector('.galleta__nombre').textContent;
+        var precio = parseFloat(g.dataset.precio);
+        var totalItem = cantidad * precio;
         subtotal += totalItem;
-        items.push({ nombre, cantidad, precio, totalItem });
+        items.push({ nombre: nombre, cantidad: cantidad, precio: precio, totalItem: totalItem });
       }
     });
 
@@ -31,37 +62,37 @@ document.addEventListener('DOMContentLoaded', () => {
     resumen.style.display = 'block';
 
     lista.innerHTML = items
-      .map(
-        (i) =>
-          `<li><span>${i.nombre} × ${i.cantidad}</span><span>${i.totalItem.toFixed(2)} €</span></li>`
-      )
+      .map(function (i) {
+        return '<li><span>' + i.nombre + ' \u00d7 ' + i.cantidad + '</span><span>' + i.totalItem.toFixed(2) + ' \u20ac</span></li>';
+      })
       .join('');
 
-    const descuento = subtotal >= 30 ? subtotal * 0.1 : 0;
-    const total = subtotal - descuento;
+    var totalUnidades = items.reduce(function (sum, i) { return sum + i.cantidad; }, 0);
+    var descuento = totalUnidades > 10 ? subtotal * 0.1 : 0;
+    var total = subtotal - descuento;
 
     subtotalEl.textContent = subtotal.toFixed(2);
-    descuentoEl.textContent = `-${descuento.toFixed(2)}`;
+    descuentoEl.textContent = '-' + descuento.toFixed(2);
     totalEl.textContent = total.toFixed(2);
   }
 
-  galletas.forEach((g) => {
-    const input = g.querySelector('.galleta__cantidad');
-    const btnMas = g.querySelector('.galleta__btn--mas');
-    const btnMenos = g.querySelector('.galleta__btn--menos');
+  galletas.forEach(function (g) {
+    var input = g.querySelector('.galleta__cantidad');
+    var btnMas = g.querySelector('.galleta__btn--mas');
+    var btnMenos = g.querySelector('.galleta__btn--menos');
 
     function cambiarCantidad(delta) {
-      let val = parseInt(input.value, 10) || 0;
+      var val = parseInt(input.value, 10) || 0;
       val = Math.max(0, Math.min(99, val + delta));
       input.value = val;
       actualizarResumen();
     }
 
-    btnMas.addEventListener('click', () => cambiarCantidad(1));
-    btnMenos.addEventListener('click', () => cambiarCantidad(-1));
+    btnMas.addEventListener('click', function () { cambiarCantidad(1); });
+    btnMenos.addEventListener('click', function () { cambiarCantidad(-1); });
 
-    input.addEventListener('change', () => {
-      let val = parseInt(input.value, 10);
+    input.addEventListener('change', function () {
+      var val = parseInt(input.value, 10);
       if (isNaN(val) || val < 0) val = 0;
       if (val > 99) val = 99;
       input.value = val;
@@ -69,13 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  btnEnviar.addEventListener('click', async () => {
-    const items = [];
-    galletas.forEach((g) => {
-      const input = g.querySelector('.galleta__cantidad');
-      const cantidad = parseInt(input.value, 10) || 0;
+  btnEnviar.addEventListener('click', async function () {
+    var items = [];
+    galletas.forEach(function (g) {
+      var input = g.querySelector('.galleta__cantidad');
+      var cantidad = parseInt(input.value, 10) || 0;
       if (cantidad > 0) {
-        const id = g.dataset.sabor;
+        var id = parseInt(g.dataset.id, 10);
+        if (!id) return;
         items.push({ cookie_id: id, quantity: cantidad });
       }
     });
@@ -83,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (items.length === 0) return;
 
     try {
-      const res = await fetch('/api/auth/me', { credentials: 'same-origin' });
+      var res = await fetch('/api/auth/me', { credentials: 'same-origin' });
       if (!res.ok) {
         window.location.href = '/login';
         return;
@@ -93,20 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const slugToId = {
-      'avena': 1, 'chocolate-chips': 2, 'red-velvet': 3,
-      'mantequilla': 4, 'jengibre': 5, 'peanut-butter': 6
-    };
-
-    const payload = {
-      items: items.map(i => ({
-        cookie_id: slugToId[i.cookie_id] || i.cookie_id,
-        quantity: i.quantity
-      }))
-    };
+    var payload = { items: items };
 
     try {
-      const res = await fetch('/api/orders', {
+      var res = await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -120,16 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (res.ok) {
         alert('Pedido enviado correctamente');
-        galletas.forEach((g) => {
+        galletas.forEach(function (g) {
           g.querySelector('.galleta__cantidad').value = 0;
         });
         actualizarResumen();
+        if (typeof cargarPedidos === 'function') cargarPedidos();
       } else {
-        const data = await res.json();
+        var data = await res.json();
         alert(data.error || 'Error al enviar el pedido');
       }
     } catch (e) {
       alert('Error de conexión');
     }
   });
+
+  cargarCatalogo();
 });

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const nav = document.getElementById('header-nav');
   const authLink = document.getElementById('auth-link');
   const authUser = document.getElementById('auth-user');
+  const logoutItem = document.getElementById('logout-item');
   const logoutLink = document.getElementById('logout-link');
   const overlay = document.getElementById('modal-overlay');
   const modalClose = document.getElementById('modal-close');
@@ -21,7 +22,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
+      const href = link.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
       if (target) target.scrollIntoView({ behavior: 'smooth' });
       if (nav) nav.classList.remove('header__nav--open');
     });
@@ -37,6 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         authUser.textContent = user.name;
         authUser.style.display = 'inline';
         logoutLink.style.display = 'inline';
+        if (logoutItem) logoutItem.style.display = 'inline';
         if (typeof cargarPedidos === 'function') cargarPedidos();
       }
     } catch (e) {}
@@ -113,6 +117,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       authLink.style.display = 'inline';
       authUser.style.display = 'none';
       logoutLink.style.display = 'none';
+      if (logoutItem) logoutItem.style.display = 'none';
       if (typeof ocultarPedidos === 'function') ocultarPedidos();
     });
   }
