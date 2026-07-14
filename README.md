@@ -57,7 +57,7 @@ Nalee-s-Bakery/
 ├── spec/                      # Specification-Driven Development
 │   ├── constitution/          # Misión, tech-stack, roadmap
 │   └── features/              # 9 features con spec, plan y tareas
-├── wireframe.excalidraw       # Wireframes de la interfaz
+├── wireframe-new.excalidraw   # Wireframes de la interfaz
 └── .agents/skills/            # Skills del proyecto
 ```
 
@@ -94,7 +94,7 @@ La base de datos SQLite se crea automáticamente en `backend/data/nalees_bakery.
 ### Wireframes
 ![Wireframe NALEE's Bakery](wireframe.png)
 
-El archivo [`wireframe.excalidraw`](wireframe.excalidraw) contiene los wireframes originales en formato editable. La vista previa incluye:
+El archivo [`wireframe-new.excalidraw`](wireframe-new.excalidraw) contiene los wireframes completos en formato editable. La vista previa incluye:
 
 - **Página principal** (`index.html`): header con navegación, hero, galería de 6 productos, sección sobre nosotros, testimonios, ubicación con mapa, formulario de contacto y footer
 - **Página de login** (`login.html`): targeta centrada con formulario de acceso
