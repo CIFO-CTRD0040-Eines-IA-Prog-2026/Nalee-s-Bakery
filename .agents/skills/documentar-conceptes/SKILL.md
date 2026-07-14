@@ -1,25 +1,26 @@
 ---
 name: documentar-conceptes
-description: Documenta els conceptes de programació que van sortint, de qualsevol llenguatge o tecnologia. Usa-la sempre que aparegui un concepte nou (etiqueta, propietat, funció, comanda, terme tècnic…) mentre es treballa.
+description: Documenta los conceptos de programación que van surgiendo, de cualquier lenguaje o tecnología. Úsala siempre que aparezca un concepto nuevo (etiqueta, propiedad, función, comando, término técnico…) mientras se trabaja.
 ---
-Mantén un glossari a `docs/programming-concepts.md` que es va omplint a mesura que avança el projecte. Si el fitxer o la carpeta `docs/` no existeixen, crea'ls.
 
-Quan al codi o a la conversa aparegui un concepte nou de **qualsevol llenguatge o tecnologia** (HTML, CSS, JavaScript, SQL, Node, Express, comandes de terminal, Git, conceptes generals de programació…), afegeix-lo al fitxer si encara no hi és.
+Mantén un glosario en `docs/programming-concepts.md` que se va llenando a medida que avanza el proyecto. Si el archivo o la carpeta `docs/` no existen, créalos.
 
-Format de cada entrada:
+Cuando en el código o en la conversación aparezca un concepto nuevo de **cualquier lenguaje o tecnología** (HTML, CSS, JavaScript, SQL, Node, Express, comandos de terminal, Git, conceptos generales de programación…), agrégalo al archivo si aún no está.
+
+Formato de cada entrada:
 
 ```
-## <nom del concepte>
-**Definició:** una frase curta i clara.
-**Explicació:** per a què serveix i quan s'usa, en 1–3 frases.
-**Exemple:**
+## <nombre del concepto>
+**Definición:** una frase corta y clara.
+**Explicación:** para qué sirve y cuándo se usa, en 1–3 frases.
+**Ejemplo:**
 ​```
-<!-- codi mínim, en el llenguatge que correspongui -->
+<!-- código mínimo, en el lenguaje que corresponda -->
 ​```
 ```
 
-Regles:
-- En català, to sobri i entenedor (nivell principiant).
-- No dupliquis: si el concepte ja existeix, no el tornis a afegir.
-- Agrupa per tecnologia amb un encapçalament de secció (`# HTML`, `# CSS`, `# JavaScript`, `# SQL`, `# Express`…) i ordena les entrades dins de cada grup.
-- L'exemple ha de ser mínim i real, relacionat amb el projecte quan es pugui.
+Reglas:
+- En español, tono sobrio y comprensible (nivel principiante).
+- No dupliques: si el concepto ya existe, no lo vuelvas a añadir.
+- Agrupa por tecnología con un encabezado de sección (`# HTML`, `# CSS`, `# JavaScript`, `# SQL`, `# Express`…) y ordena las entradas dentro de cada grupo.
+- El ejemplo debe ser mínimo y real, relacionado con el proyecto cuando se pueda.
