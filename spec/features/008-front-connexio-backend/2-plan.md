@@ -1,8 +1,8 @@
-# Plan — 009 Conexión del FRONTEND al backend real
+# Plan — 008 Conexión del FRONTEND al backend real
 
 ## Archivos
 - `public/js/auth.js` — reescribir: login, registro y logout con `fetch` real (credentials same-origin). Sesión vía `GET /api/auth/me` en lugar de localStorage.
-- `public/js/pedido.js` — reescribir: cargar catálogo desde `GET /api/cookies`; enviar pedido a `POST /api/orders`.
+- `public/js/pedido.js` — reescribir: cargar catálogo; enviar pedido a `POST /api/orders`.
 - `public/js/i18n.js` — sin cambios funcionales (sigue aplicando traducciones).
 - `public/*.html` — `href` y acciones hacia `/`, `/login`, `/registro` (sin `.html`).
 - `backend/server.js` — si se decide proteger la ruta `/`, aplicar `requiereSesionPagina`.
@@ -11,7 +11,7 @@
 - **fetch real (skill fetch-api)**: `async/await` con `try/catch`, `response.ok` antes de `.json()`, `credentials: 'same-origin'` en cada llamada. Errores en español, nunca el texto de la excepción.
 - **Eliminar mock**: fuera `localStorage.setItem/getItem('session')`, datos de galletas quemados, etc.
 - **Auth**: después de validar (002), login y registro llaman a la API y navegan a `/` si va bien; si no, mensaje en la zona de error.
-- **Catálogo dinámico**: `pedido.js` carga `GET /api/cookies` al iniciar y construye las tarjetas dinámicamente (o pinta sobre un template). El HTML deja de tener las 6 galletas fijas.
+- **Catálogo dinámico**: `pedido.js` carga catalogo al iniciar y construye las tarjetas dinámicamente (o pinta sobre un template). El HTML debe tener las 6 galletas fijas.
 - **Sesión**: al cargar la página, `GET /api/auth/me` para saber si hay sesión. Si hay, mostrar logout-item; si no, auth-link. Un 401 en cualquier llamada de pedido redirige a `/login`.
 
 ## Precondiciones
