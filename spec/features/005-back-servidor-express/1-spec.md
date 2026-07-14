@@ -3,6 +3,8 @@
 ## Descripción
 Segundo paso del BACKEND: levantar un servidor Express que sirva el FRONTEND con URLs limpias y tenga la conexión a `nalees_bakery` (004) preparada y verificable. Aún no hay rutas de API ni de autenticación.
 
+**Rol del servidor Express:** actúa como capa intermedia (API) entre el frontend estático y la base de datos SQLite. Esto es necesario porque sql.js es WASM ejecutándose en Node, no en el navegador; además, la autenticación (bcrypt, sesiones httpOnly) y la lógica de negocio (precios desde BD, descuentos, transacciones) requieren código del lado servidor que no puede ejecutarse en el frontend vanilla (ver `spec/constitution/2-tech-stack.md`).
+
 ## Contenido
 - Servidor Express en un puerto configurable (por defecto 3000).
 - Sirve el FRONTEND con URLs limpias (sin `.html`): `/`, `/login`, `/registro`. Los assets (CSS, JS, imágenes) como estáticos de `public/`.

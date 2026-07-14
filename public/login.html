@@ -10,16 +10,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header" id="header">
     <div class="header__inner">
       <a href="/" class="header__logo">NALEE's Bakery</a>
-      <button class="header__menu-toggle" id="menu-toggle" aria-label="Menú">☰</button>
       <nav class="header__nav" id="header-nav">
-        <a href="/#galletas" data-i18n="nav_galletas">Galletas</a>
-        <a href="/#galeria" data-i18n="nav_galeria">Galería</a>
-        <a href="/#nosotros" data-i18n="nav_nosotros">Sobre Nosotros</a>
-        <a href="/#contacto" data-i18n="nav_contacto">Contacto</a>
+        <a href="/#galletas" class="header__link" data-i18n="nav_galletas">Galletas</a>
+        <a href="/#galeria" class="header__link" data-i18n="nav_galeria">Galería</a>
+        <a href="/#nosotros" class="header__link" data-i18n="nav_nosotros">Sobre Nosotros</a>
+        <a href="/#contacto" class="header__link" data-i18n="nav_contacto">Contacto</a>
       </nav>
+      <button class="header__menu-btn" id="menu-btn" aria-label="Menú de navegación">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 

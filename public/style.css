@@ -1054,6 +1054,127 @@ header {
   color: var(--color-rosa-oscuro);
 }
 
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  padding-top: 5rem;
+}
+
+.auth-card {
+  background: var(--color-blanco);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.auth-card__icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-card__title {
+  font-family: var(--ff-headings);
+  font-size: var(--fs-h2);
+  color: var(--color-marron-oscuro);
+  margin-bottom: 1.5rem;
+}
+
+.auth-card__field {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.auth-card__field label {
+  display: block;
+  font-size: var(--fs-small);
+  color: var(--color-marron-oscuro);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.auth-card__field input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #e0d5c8;
+  border-radius: 8px;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--color-texto);
+  background: var(--color-crema);
+  transition: border-color 0.3s;
+}
+
+.auth-card__field input:focus {
+  outline: none;
+  border-color: var(--color-rosa);
+}
+
+.auth-card__error {
+  font-size: 0.8rem;
+  color: var(--color-rosa-oscuro);
+  min-height: 1rem;
+  margin-top: 0.2rem;
+}
+
+.auth-card__error--general {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.auth-card__btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--color-rosa);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 0.5rem;
+}
+
+.auth-card__btn:hover {
+  background: var(--color-rosa-oscuro);
+}
+
+.auth-card__link {
+  text-align: center;
+  font-size: var(--fs-small);
+  color: var(--color-texto-claro);
+  margin-top: 1rem;
+}
+
+.auth-card__link a {
+  color: var(--color-rosa);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-card__link a:hover {
+  color: var(--color-rosa-oscuro);
+}
+
+.header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 @media (min-width: 480px) {
   :root {
     --fs-h1: 3rem;
