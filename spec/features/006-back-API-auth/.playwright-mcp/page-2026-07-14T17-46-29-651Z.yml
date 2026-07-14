@@ -1,0 +1,164 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link "NALEE's Bakery" [ref=f3e4] [cursor=pointer]:
+        - /url: "#"
+      - navigation [ref=f3e5]:
+        - link "Galletas" [ref=f3e6] [cursor=pointer]:
+          - /url: "#galletas"
+        - link "Galería" [ref=f3e7] [cursor=pointer]:
+          - /url: "#galeria"
+        - link "Sobre Nosotros" [ref=f3e8] [cursor=pointer]:
+          - /url: "#nosotros"
+        - link "Testimonios" [ref=f3e9] [cursor=pointer]:
+          - /url: "#testimonios"
+        - link "Contacto" [ref=f3e10] [cursor=pointer]:
+          - /url: "#contacto"
+      - generic [ref=f3e11]:
+        - button "Seleccionar idioma" [ref=f3e13] [cursor=pointer]: ES
+        - link "Iniciar sesión" [ref=f3e14] [cursor=pointer]:
+          - /url: "#"
+  - main [ref=f3e15]:
+    - generic [ref=f3e17]:
+      - heading "Galletas artesanas con amor" [level=1] [ref=f3e18]
+      - paragraph [ref=f3e19]: "Descubre el sabor auténtico de nuestras recetas tradicionales, hechas con ingredientes naturales y nuestro ingrediente secreto: mucho, mucho, amor."
+      - link "Descubre nuestras galletas" [ref=f3e20] [cursor=pointer]:
+        - /url: "#galletas"
+    - generic [ref=f3e22]:
+      - heading "Nuestras Galletas" [level=2] [ref=f3e23]
+      - generic [ref=f3e24]:
+        - article [ref=f3e25]:
+          - heading "Avena" [level=3] [ref=f3e27]
+          - paragraph [ref=f3e28]: Galleta de avena con pasas y un toque de canela
+          - paragraph [ref=f3e29]: 2.50 €
+          - generic [ref=f3e30]:
+            - button "Reducir cantidad" [ref=f3e31] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=f3e32]: "0"
+            - button "Aumentar cantidad" [ref=f3e33] [cursor=pointer]: +
+        - article [ref=f3e34]:
+          - heading "Chocolate Chips" [level=3] [ref=f3e36]
+          - paragraph [ref=f3e37]: Galleta clásica con pepitas de chocolate
+          - paragraph [ref=f3e38]: 2.50 €
+          - generic [ref=f3e39]:
+            - button "Reducir cantidad" [ref=f3e40] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=f3e41]: "0"
+            - button "Aumentar cantidad" [ref=f3e42] [cursor=pointer]: +
+        - article [ref=f3e43]:
+          - heading "Red Velvet" [level=3] [ref=f3e45]
+          - paragraph [ref=f3e46]: Galleta suave de cacao con cobertura de queso
+          - paragraph [ref=f3e47]: 3.00 €
+          - generic [ref=f3e48]:
+            - button "Reducir cantidad" [ref=f3e49] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=f3e50]: "0"
+            - button "Aumentar cantidad" [ref=f3e51] [cursor=pointer]: +
+        - article [ref=f3e52]:
+          - heading "Mantequilla" [level=3] [ref=f3e54]
+          - paragraph [ref=f3e55]: Galleta de mantequilla tradicional, crujiente y suave
+          - paragraph [ref=f3e56]: 2.00 €
+          - generic [ref=f3e57]:
+            - button "Reducir cantidad" [ref=f3e58] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=f3e59]: "0"
+            - button "Aumentar cantidad" [ref=f3e60] [cursor=pointer]: +
+        - article [ref=f3e61]:
+          - heading "Jengibre" [level=3] [ref=f3e63]
+          - paragraph [ref=f3e64]: Galleta especiada de jengibre con un toque de canela
+          - paragraph [ref=f3e65]: 2.50 €
+          - generic [ref=f3e66]:
+            - button "Reducir cantidad" [ref=f3e67] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=f3e68]: "0"
+            - button "Aumentar cantidad" [ref=f3e69] [cursor=pointer]: +
+        - article [ref=f3e70]:
+          - heading "Peanut Butter" [level=3] [ref=f3e72]
+          - paragraph [ref=f3e73]: Galleta cremosa de cacahuete
+          - paragraph [ref=f3e74]: 3.00 €
+          - generic [ref=f3e75]:
+            - button "Reducir cantidad" [ref=f3e76] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=f3e77]: "0"
+            - button "Aumentar cantidad" [ref=f3e78] [cursor=pointer]: +
+    - generic [ref=f3e80]:
+      - heading "Galería" [level=2] [ref=f3e81]
+      - generic [ref=f3e82]:
+        - img "Galleta de chocolate chips" [ref=f3e84]
+        - img "Galleta red velvet" [ref=f3e86]
+        - img "Galleta de avena" [ref=f3e88]
+        - img "Galleta de mantequilla" [ref=f3e90]
+        - img "Galleta de jengibre" [ref=f3e92]
+        - img "Galleta de peanut butter" [ref=f3e94]
+    - generic [ref=f3e96]:
+      - generic [ref=f3e97]:
+        - heading "Sobre Nosotros" [level=2] [ref=f3e98]
+        - paragraph [ref=f3e99]: En NALEE's Bakery llevamos 2 años endulzando la vida de nuestros clientes. Cada galleta está hecha a mano con ingredientes seleccionados, siguiendo recetas tradicionales que han pasado de generación en generación.
+        - paragraph [ref=f3e100]: Nuestra pasión por la repostería artesana nos lleva a innovar constantemente, creando sabores únicos que combinan lo mejor de la tradición con un toque moderno.
+      - generic:
+        - img "Nalee horneando galletas"
+    - generic [ref=f3e102]:
+      - heading "Lo que dicen nuestros clientes" [level=2] [ref=f3e103]
+      - generic [ref=f3e104]:
+        - article [ref=f3e105]:
+          - img "Ana Martínez" [ref=f3e107]
+          - paragraph [ref=f3e108]: "\"Las mejores galletas que he probado. La red velvet es increíble, y el trato es siempre excelente.\""
+          - paragraph [ref=f3e109]: Ana Martínez
+          - paragraph [ref=f3e110]: Clienta habitual
+        - article [ref=f3e111]:
+          - img "Carlos López" [ref=f3e113]
+          - paragraph [ref=f3e114]: "\"Hago pedidos cada semana para la oficina. A todos les encantan, especialmente las de chocolate chips.\""
+          - paragraph [ref=f3e115]: Carlos López
+          - paragraph [ref=f3e116]: Cliente corporativo
+        - article [ref=f3e117]:
+          - img "Maria García" [ref=f3e119]
+          - paragraph [ref=f3e120]: "\"El sabor casero me transporta a la cocina de mi abuela. Calidad y cariño en cada bocado.\""
+          - paragraph [ref=f3e121]: Maria García
+          - paragraph [ref=f3e122]: Clienta fiel
+    - generic [ref=f3e124]:
+      - generic [ref=f3e125]:
+        - heading "Visítanos" [level=2] [ref=f3e126]
+        - paragraph [ref=f3e127]: Calle del Dulce, 42, 08001 Barcelona
+        - paragraph [ref=f3e128]:
+          - strong [ref=f3e129]: "Horario:"
+          - text: "Lun–Vie: 9:00 – 20:00 Sáb: 10:00 – 21:00 Dom: 10:00 – 14:00"
+        - paragraph [ref=f3e130]: "Tel: +34 932 123 456"
+      - iframe [ref=f3e132]:
+        - link "Abrir en Maps (se abre en una nueva pestaña)" [ref=f4e4] [cursor=pointer]:
+          - /url: undefined
+          - text: Abrir en Maps
+    - generic [ref=f3e134]:
+      - heading "Contacto" [level=2] [ref=f3e135]
+      - generic [ref=f3e136]:
+        - textbox "Nombre" [ref=f3e137]
+        - textbox "Email" [ref=f3e138]
+        - textbox "Mensaje" [ref=f3e139]
+        - button "Enviar mensaje" [ref=f3e140] [cursor=pointer]
+  - contentinfo [ref=f3e141]:
+    - generic [ref=f3e142]:
+      - generic [ref=f3e143]:
+        - heading "NALEE's Bakery" [level=3] [ref=f3e144]
+        - paragraph [ref=f3e145]: Galletas artesanas hechas con amor y los mejores ingredientes desde 2014.
+      - generic [ref=f3e146]:
+        - heading "Enlaces" [level=4] [ref=f3e147]
+        - link "Galletas" [ref=f3e148] [cursor=pointer]:
+          - /url: "#galletas"
+        - link "Galería" [ref=f3e149] [cursor=pointer]:
+          - /url: "#galeria"
+        - link "Sobre Nosotros" [ref=f3e150] [cursor=pointer]:
+          - /url: "#nosotros"
+        - link "Contacto" [ref=f3e151] [cursor=pointer]:
+          - /url: "#contacto"
+      - generic [ref=f3e152]:
+        - heading "Síguenos" [level=4] [ref=f3e153]
+        - generic [ref=f3e154]:
+          - link "Facebook" [ref=f3e155] [cursor=pointer]:
+            - /url: "#"
+            - text: FB
+          - link "Instagram" [ref=f3e156] [cursor=pointer]:
+            - /url: "#"
+            - text: IG
+          - link "Twitter" [ref=f3e157] [cursor=pointer]:
+            - /url: "#"
+            - text: TW
+      - generic [ref=f3e158]:
+        - heading "Newsletter" [level=4] [ref=f3e159]
+        - generic [ref=f3e160]:
+          - textbox "Email para newsletter" [ref=f3e161]:
+            - /placeholder: Tu email
+          - button "Suscribirse" [ref=f3e162] [cursor=pointer]
+    - paragraph [ref=f3e164]: © 2024 NALEE's Bakery. Todos los derechos reservados.

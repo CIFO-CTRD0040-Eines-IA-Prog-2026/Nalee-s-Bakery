@@ -31,12 +31,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
+  let currentUser = null;
+
   async function checkSession() {
     if (!authLink || !authUser || !logoutLink) return;
     try {
       const res = await fetch('/api/auth/me', { credentials: 'same-origin' });
       if (res.ok) {
         const user = await res.json();
+        currentUser = user;
         authLink.style.display = 'none';
         authUser.textContent = user.name;
         authUser.style.display = 'inline';
@@ -44,8 +47,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (logoutItem) logoutItem.style.display = 'inline';
         if (user.role === 'admin' && adminLink) adminLink.style.display = 'inline';
         if (typeof cargarPedidos === 'function') cargarPedidos();
+        rellenarContacto(user);
       }
     } catch (e) {}
+  }
+
+  function rellenarContacto(user) {
+    const nombreInput = document.getElementById('contacto-nombre');
+    const emailInput = document.getElementById('contacto-email');
+    if (nombreInput && user.name) nombreInput.value = user.name;
+    if (emailInput && user.email) emailInput.value = user.email;
   }
 
   await checkSession();
@@ -116,12 +127,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       try {
         await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' });
       } catch (e) {}
+      currentUser = null;
       authLink.style.display = 'inline';
       authUser.style.display = 'none';
       logoutLink.style.display = 'none';
       if (logoutItem) logoutItem.style.display = 'none';
       if (adminLink) adminLink.style.display = 'none';
       if (typeof ocultarPedidos === 'function') ocultarPedidos();
+      const nombreInput = document.getElementById('contacto-nombre');
+      const emailInput = document.getElementById('contacto-email');
+      if (nombreInput) nombreInput.value = '';
+      if (emailInput) emailInput.value = '';
     });
   }
 
