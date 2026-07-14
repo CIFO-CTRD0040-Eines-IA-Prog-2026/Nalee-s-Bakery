@@ -7,6 +7,7 @@ const pool = require('./db/connection');
 const authRoutes = require('./routes/auth');
 const cookiesRoutes = require('./routes/cookies');
 const ordersRoutes = require('./routes/orders');
+const adminRoutes = require('./routes/admin');
 const { requiereAdmin } = require('./middleware/sesion');
 
 const app = express();
@@ -79,6 +80,7 @@ app.get('/admin', requiereAdmin, (req, res) => {
 app.use(authRoutes);
 app.use(cookiesRoutes);
 app.use(ordersRoutes);
+app.use(adminRoutes);
 
 app.listen(PORT, () => {
   console.log(`NALEE's Bakery API running on port ${PORT}`);

@@ -1,0 +1,173 @@
+- generic [active] [ref=f18e1]:
+  - banner [ref=f18e2]:
+    - generic [ref=f18e3]:
+      - link "NALEE's Bakery" [ref=f18e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f18e5]:
+        - link "Tienda" [ref=f18e6] [cursor=pointer]:
+          - /url: /
+        - link "Panel Admin" [ref=f18e7] [cursor=pointer]:
+          - /url: /admin
+      - link "Volver a tienda" [ref=f18e9] [cursor=pointer]:
+        - /url: /
+  - main [ref=f18e10]:
+    - generic [ref=f18e11]:
+      - generic [ref=f18e12]:
+        - heading "Panel de Administración" [level=1] [ref=f18e13]
+        - generic [ref=f18e14]:
+          - link "Pedidos" [ref=f18e15] [cursor=pointer]:
+            - /url: "#pedidos"
+          - link "Confirmación" [ref=f18e16] [cursor=pointer]:
+            - /url: "#confirmacion"
+          - link "General" [ref=f18e17] [cursor=pointer]:
+            - /url: "#general"
+      - generic [ref=f18e18]:
+        - heading "Pedidos Recibidos" [level=2] [ref=f18e19]
+        - paragraph [ref=f18e21]: No hay pedidos registrados.
+      - generic [ref=f18e22]:
+        - heading "Confirmación de Pedidos" [level=2] [ref=f18e23]
+        - paragraph [ref=f18e24]: "Selecciona un pedido de la lista superior para cambiar su estado:"
+        - list [ref=f18e25]:
+          - listitem [ref=f18e26]:
+            - strong [ref=f18e27]: "Pendiente → Confirmado:"
+            - text: Cuando el admin acepta el pedido
+          - listitem [ref=f18e28]:
+            - strong [ref=f18e29]: "Confirmado → Entregado:"
+            - text: Cuando el cliente recibe el pedido
+      - generic [ref=f18e30]:
+        - heading "Cambios Generales" [level=2] [ref=f18e31]
+        - generic [ref=f18e32]:
+          - generic [ref=f18e33]: "Actualizar todos los precios:"
+          - spinbutton [ref=f18e34]: "0"
+          - generic [ref=f18e35]: "%"
+          - button "Aplicar" [ref=f18e36] [cursor=pointer]
+        - table [ref=f18e38]:
+          - rowgroup [ref=f18e39]:
+            - row [ref=f18e40]:
+              - columnheader "Nombre (ES)" [ref=f18e41]
+              - columnheader "Nombre (EN)" [ref=f18e42]
+              - columnheader "Descripción (ES)" [ref=f18e43]
+              - columnheader "Descripción (EN)" [ref=f18e44]
+              - columnheader "Precio" [ref=f18e45]
+              - columnheader "Acciones" [ref=f18e46]
+          - rowgroup [ref=f18e47]:
+            - row [ref=f18e48]:
+              - cell [ref=f18e49]:
+                - textbox [ref=f18e50]: Avena
+              - cell [ref=f18e51]:
+                - textbox [ref=f18e52]: Oatmeal
+              - cell [ref=f18e53]:
+                - textbox [ref=f18e54]: undefined
+              - cell [ref=f18e55]:
+                - textbox [ref=f18e56]: undefined
+              - cell [ref=f18e57]:
+                - spinbutton [ref=f18e58]: "2.5"
+              - cell [ref=f18e59]:
+                - generic [ref=f18e60]:
+                  - button "Guardar" [ref=f18e61] [cursor=pointer]
+                  - button "Eliminar" [ref=f18e62] [cursor=pointer]
+            - row [ref=f18e63]:
+              - cell [ref=f18e64]:
+                - textbox [ref=f18e65]: Chocolate Chips
+              - cell [ref=f18e66]:
+                - textbox [ref=f18e67]: Chocolate Chips
+              - cell [ref=f18e68]:
+                - textbox [ref=f18e69]: undefined
+              - cell [ref=f18e70]:
+                - textbox [ref=f18e71]: undefined
+              - cell [ref=f18e72]:
+                - spinbutton [ref=f18e73]: "2.5"
+              - cell [ref=f18e74]:
+                - generic [ref=f18e75]:
+                  - button "Guardar" [ref=f18e76] [cursor=pointer]
+                  - button "Eliminar" [ref=f18e77] [cursor=pointer]
+            - row [ref=f18e78]:
+              - cell [ref=f18e79]:
+                - textbox [ref=f18e80]: Red Velvet
+              - cell [ref=f18e81]:
+                - textbox [ref=f18e82]: Red Velvet
+              - cell [ref=f18e83]:
+                - textbox [ref=f18e84]: undefined
+              - cell [ref=f18e85]:
+                - textbox [ref=f18e86]: undefined
+              - cell [ref=f18e87]:
+                - spinbutton [ref=f18e88]: "3"
+              - cell [ref=f18e89]:
+                - generic [ref=f18e90]:
+                  - button "Guardar" [ref=f18e91] [cursor=pointer]
+                  - button "Eliminar" [ref=f18e92] [cursor=pointer]
+            - row [ref=f18e93]:
+              - cell [ref=f18e94]:
+                - textbox [ref=f18e95]: Mantequilla
+              - cell [ref=f18e96]:
+                - textbox [ref=f18e97]: Butter
+              - cell [ref=f18e98]:
+                - textbox [ref=f18e99]: undefined
+              - cell [ref=f18e100]:
+                - textbox [ref=f18e101]: undefined
+              - cell [ref=f18e102]:
+                - spinbutton [ref=f18e103]: "2"
+              - cell [ref=f18e104]:
+                - generic [ref=f18e105]:
+                  - button "Guardar" [ref=f18e106] [cursor=pointer]
+                  - button "Eliminar" [ref=f18e107] [cursor=pointer]
+            - row [ref=f18e108]:
+              - cell [ref=f18e109]:
+                - textbox [ref=f18e110]: Jengibre
+              - cell [ref=f18e111]:
+                - textbox [ref=f18e112]: Ginger
+              - cell [ref=f18e113]:
+                - textbox [ref=f18e114]: undefined
+              - cell [ref=f18e115]:
+                - textbox [ref=f18e116]: undefined
+              - cell [ref=f18e117]:
+                - spinbutton [ref=f18e118]: "2.5"
+              - cell [ref=f18e119]:
+                - generic [ref=f18e120]:
+                  - button "Guardar" [ref=f18e121] [cursor=pointer]
+                  - button "Eliminar" [ref=f18e122] [cursor=pointer]
+            - row [ref=f18e123]:
+              - cell [ref=f18e124]:
+                - textbox [ref=f18e125]: Peanut Butter
+              - cell [ref=f18e126]:
+                - textbox [ref=f18e127]: Peanut Butter
+              - cell [ref=f18e128]:
+                - textbox [ref=f18e129]: undefined
+              - cell [ref=f18e130]:
+                - textbox [ref=f18e131]: undefined
+              - cell [ref=f18e132]:
+                - spinbutton [ref=f18e133]: "3"
+              - cell [ref=f18e134]:
+                - generic [ref=f18e135]:
+                  - button "Guardar" [ref=f18e136] [cursor=pointer]
+                  - button "Eliminar" [ref=f18e137] [cursor=pointer]
+        - generic [ref=f18e138]:
+          - heading "Añadir Galleta Nueva" [level=3] [ref=f18e139]
+          - generic [ref=f18e140]:
+            - generic [ref=f18e141]:
+              - generic [ref=f18e142]:
+                - generic [ref=f18e143]: Slug (identificador)
+                - textbox "Slug (identificador)" [ref=f18e144]:
+                  - /placeholder: mi-galleta
+              - generic [ref=f18e145]:
+                - generic [ref=f18e146]: Imagen
+                - textbox "Imagen" [ref=f18e147]:
+                  - /placeholder: imagen.jpg
+              - generic [ref=f18e148]:
+                - generic [ref=f18e149]: Precio (€)
+                - spinbutton "Precio (€)" [ref=f18e150]
+            - generic [ref=f18e151]:
+              - generic [ref=f18e152]:
+                - generic [ref=f18e153]: Nombre (ES)
+                - textbox "Nombre (ES)" [ref=f18e154]
+              - generic [ref=f18e155]:
+                - generic [ref=f18e156]: Nombre (EN)
+                - textbox "Nombre (EN)" [ref=f18e157]
+            - generic [ref=f18e158]:
+              - generic [ref=f18e159]:
+                - generic [ref=f18e160]: Descripción (ES)
+                - textbox "Descripción (ES)" [ref=f18e161]
+              - generic [ref=f18e162]:
+                - generic [ref=f18e163]: Descripción (EN)
+                - textbox "Descripción (EN)" [ref=f18e164]
+            - button "Crear Galleta" [ref=f18e165] [cursor=pointer]

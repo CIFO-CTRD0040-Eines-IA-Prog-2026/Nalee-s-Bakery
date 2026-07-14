@@ -8,14 +8,155 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .admin-section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .admin-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--color-marron-oscuro);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--color-rosa);
+      padding-bottom: 0.5rem;
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .admin-table th,
+    .admin-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    .admin-table th {
+      background: var(--color-rosa);
+      color: var(--color-marron-oscuro);
+      font-weight: 600;
+    }
+    .admin-table tr:hover {
+      background: #f9f9f9;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    .status-pending { background: #fef3c7; color: #92400e; }
+    .status-confirmed { background: #d1fae5; color: #065f46; }
+    .status-delivered { background: #dbeafe; color: #1e40af; }
+    .status-cancelled { background: #fee2e2; color: #991b1b; }
+    .btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-primary { background: var(--color-marron); color: white; }
+    .btn-primary:hover { background: var(--color-marron-oscuro); }
+    .btn-success { background: #10b981; color: white; }
+    .btn-success:hover { background: #059669; }
+    .btn-danger { background: #ef4444; color: white; }
+    .btn-danger:hover { background: #dc2626; }
+    .btn-secondary { background: #6b7280; color: white; }
+    .btn-secondary:hover { background: #4b5563; }
+    .price-input, .edit-input {
+      width: 100px;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .edit-input { width: 100%; }
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .admin-nav {
+      display: flex;
+      gap: 1rem;
+    }
+    .admin-nav a {
+      color: var(--color-marron);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .admin-nav a:hover { color: var(--color-marron-oscuro); }
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex: 1;
+      min-width: 150px;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: var(--color-marron-oscuro);
+      font-size: 0.875rem;
+    }
+    .form-group input, .form-group textarea {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .form-group textarea { resize: vertical; min-height: 60px; }
+    .percentage-control {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: #f9fafb;
+      border-radius: 8px;
+    }
+    .percentage-control input {
+      width: 80px;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .actions-cell {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+  </style>
 </head>
 <body>
   <header class="header" id="header">
     <div class="header__container">
       <a href="/" class="header__logo">NALEE's Bakery</a>
       <nav class="header__nav" id="header-nav">
-        <a href="/" class="header__link" data-i18n="nav_galletas">Galletas</a>
-        <a href="/" class="header__link">Panel Admin</a>
+        <a href="/" class="header__link">Tienda</a>
+        <a href="/admin" class="header__link">Panel Admin</a>
       </nav>
       <div class="header__actions">
         <a href="/" class="header__nav-link--login">Volver a tienda</a>
@@ -27,15 +168,351 @@
   </header>
 
   <main class="auth-page">
-    <div class="auth-card" style="max-width:600px;">
-      <div class="auth-card__icon">&#128736;</div>
-      <h1 class="auth-card__title">Panel de Administración</h1>
-      <p style="text-align:center;margin-bottom:1.5rem;">Bienvenido al panel de administración de NALEE's Bakery.</p>
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <a href="/admin/data" target="_blank" class="auth-card__btn" style="text-decoration:none;text-align:center;">Ver datos (JSON)</a>
-        <a href="/" class="auth-card__btn" style="text-decoration:none;text-align:center;background:var(--color-marron-claro);color:var(--color-marron-oscuro);">Volver a la tienda</a>
+    <div class="admin-sections">
+      <div class="admin-header">
+        <h1 class="auth-card__title">Panel de Administración</h1>
+        <div class="admin-nav">
+          <a href="#pedidos">Pedidos</a>
+          <a href="#confirmacion">Confirmación</a>
+          <a href="#general">General</a>
+        </div>
       </div>
+
+      <section id="pedidos" class="admin-section">
+        <h2>Pedidos Recibidos</h2>
+        <div id="orders-container">
+          <p>Cargando pedidos...</p>
+        </div>
+      </section>
+
+      <section id="confirmacion" class="admin-section">
+        <h2>Confirmación de Pedidos</h2>
+        <p>Selecciona un pedido de la lista superior para cambiar su estado:</p>
+        <ul style="margin-top: 1rem; line-height: 2;">
+          <li><strong>Pendiente → Confirmado:</strong> Cuando el admin acepta el pedido</li>
+          <li><strong>Confirmado → Entregado:</strong> Cuando el cliente recibe el pedido</li>
+        </ul>
+      </section>
+
+      <section id="general" class="admin-section">
+        <h2>Cambios Generales</h2>
+        
+        <div class="percentage-control">
+          <span>Actualizar todos los precios:</span>
+          <input type="number" id="percentage-input" value="0" step="1" min="-90" max="100">
+          <span>%</span>
+          <button class="btn btn-secondary" onclick="updateAllPrices()">Aplicar</button>
+        </div>
+
+        <div id="cookies-container">
+          <p>Cargando galletas...</p>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--color-rosa);">
+          <h3 style="margin-bottom: 1rem; color: var(--color-marron-oscuro);">Añadir Galleta Nueva</h3>
+          <form id="new-cookie-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="new-slug">Slug (identificador)</label>
+                <input type="text" id="new-slug" required placeholder="mi-galleta">
+              </div>
+              <div class="form-group">
+                <label for="new-image">Imagen</label>
+                <input type="text" id="new-image" placeholder="imagen.jpg">
+              </div>
+              <div class="form-group">
+                <label for="new-price">Precio (€)</label>
+                <input type="number" id="new-price" step="0.10" min="0" required placeholder="2.50">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="new-name-es">Nombre (ES)</label>
+                <input type="text" id="new-name-es" required>
+              </div>
+              <div class="form-group">
+                <label for="new-name-en">Nombre (EN)</label>
+                <input type="text" id="new-name-en" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="new-desc-es">Descripción (ES)</label>
+                <textarea id="new-desc-es" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="new-desc-en">Descripción (EN)</label>
+                <textarea id="new-desc-en" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Crear Galleta</button>
+          </form>
+        </div>
+      </section>
     </div>
   </main>
+
+  <script>
+    const API_BASE = '';
+
+    async function fetchWithAuth(url, options = {}) {
+      const response = await fetch(url, {
+        ...options,
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+          ...options.headers
+        }
+      });
+      return response;
+    }
+
+    async function loadOrders() {
+      try {
+        const response = await fetchWithAuth(`${API_BASE}/admin/orders`);
+        if (!response.ok) throw new Error('Error al cargar pedidos');
+        const orders = await response.json();
+        renderOrders(orders);
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('orders-container').innerHTML = '<p>Error al cargar los pedidos.</p>';
+      }
+    }
+
+    function renderOrders(orders) {
+      const container = document.getElementById('orders-container');
+      if (orders.length === 0) {
+        container.innerHTML = '<p>No hay pedidos registrados.</p>';
+        return;
+      }
+      let html = `
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Fecha</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      for (const order of orders) {
+        const date = new Date(order.created_at).toLocaleDateString('es-ES');
+        const statusClass = `status-${order.status}`;
+        const statusText = {
+          'pending': 'Pendiente',
+          'confirmed': 'Confirmado',
+          'delivered': 'Entregado',
+          'cancelled': 'Cancelado'
+        }[order.status];
+        html += `
+          <tr>
+            <td>#${order.id}</td>
+            <td>${order.user_name}<br><small>${order.user_email}</small></td>
+            <td>${date}</td>
+            <td>${order.total.toFixed(2)} €</td>
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+            <td>
+              ${order.status === 'pending' ? `<button class="btn btn-success" onclick="updateOrderStatus(${order.id}, 'confirmed')">Confirmar</button>` : ''}
+              ${order.status === 'confirmed' ? `<button class="btn btn-primary" onclick="updateOrderStatus(${order.id}, 'delivered')">Marcar entregado</button>` : ''}
+            </td>
+          </tr>
+        `;
+      }
+      html += `</tbody></table>`;
+      container.innerHTML = html;
+    }
+
+    async function updateOrderStatus(orderId, newStatus) {
+      const statusText = {
+        'confirmed': 'confirmar',
+        'delivered': 'marcar como entregado'
+      }[newStatus];
+      if (!confirm(`¿${statusText.charAt(0).toUpperCase() + statusText.slice(1)} el pedido #${orderId}?`)) return;
+
+      try {
+        const response = await fetchWithAuth(`${API_BASE}/admin/orders/${orderId}/status`, {
+          method: 'PATCH',
+          body: JSON.stringify({ status: newStatus })
+        });
+        if (!response.ok) throw new Error('Error al actualizar estado');
+        loadOrders();
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al actualizar el estado del pedido');
+      }
+    }
+
+    let allCookies = [];
+
+    async function loadCookies() {
+      try {
+        const response = await fetchWithAuth(`${API_BASE}/admin/cookies`);
+        if (!response.ok) throw new Error('Error al cargar galletas');
+        allCookies = await response.json();
+        renderCookies(allCookies);
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('cookies-container').innerHTML = '<p>Error al cargar las galletas.</p>';
+      }
+    }
+
+    function renderCookies(cookies) {
+      const container = document.getElementById('cookies-container');
+      if (cookies.length === 0) {
+        container.innerHTML = '<p>No hay galletas registradas.</p>';
+        return;
+      }
+      let html = `
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Nombre (ES)</th>
+              <th>Nombre (EN)</th>
+              <th>Descripción (ES)</th>
+              <th>Descripción (EN)</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      for (const cookie of cookies) {
+        html += `
+          <tr>
+            <td><input type="text" class="edit-input" id="name-es-${cookie.id}" value="${cookie.name_es}"></td>
+            <td><input type="text" class="edit-input" id="name-en-${cookie.id}" value="${cookie.name_en}"></td>
+            <td><input type="text" class="edit-input" id="desc-es-${cookie.id}" value="${cookie.desc_es}"></td>
+            <td><input type="text" class="edit-input" id="desc-en-${cookie.id}" value="${cookie.desc_en}"></td>
+            <td><input type="number" class="price-input" id="price-${cookie.id}" value="${cookie.price}" step="0.10" min="0"></td>
+            <td>
+              <div class="actions-cell">
+                <button class="btn btn-primary" onclick="updateCookie(${cookie.id})">Guardar</button>
+                <button class="btn btn-danger" onclick="deleteCookie(${cookie.id}, '${cookie.name_es}')">Eliminar</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }
+      html += `</tbody></table>`;
+      container.innerHTML = html;
+    }
+
+    async function updateCookie(cookieId) {
+      const data = {
+        name_es: document.getElementById(`name-es-${cookieId}`).value,
+        name_en: document.getElementById(`name-en-${cookieId}`).value,
+        desc_es: document.getElementById(`desc-es-${cookieId}`).value,
+        desc_en: document.getElementById(`desc-en-${cookieId}`).value,
+        price: parseFloat(document.getElementById(`price-${cookieId}`).value)
+      };
+
+      if (!data.name_es || !data.name_en || !data.desc_es || !data.desc_en) {
+        alert('Todos los campos son obligatorios');
+        return;
+      }
+
+      if (isNaN(data.price) || data.price < 0) {
+        alert('Precio no válido');
+        return;
+      }
+
+      if (!confirm(`¿Guardar cambios en "${data.name_es}"?`)) return;
+
+      try {
+        const response = await fetchWithAuth(`${API_BASE}/admin/cookies/${cookieId}`, {
+          method: 'PUT',
+          body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error('Error al actualizar');
+        alert('Galleta actualizada correctamente');
+        loadCookies();
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al actualizar la galleta');
+      }
+    }
+
+    async function deleteCookie(cookieId, cookieName) {
+      if (!confirm(`¿Estás seguro de eliminar "${cookieName}"?`)) return;
+
+      try {
+        const response = await fetchWithAuth(`${API_BASE}/admin/cookies/${cookieId}`, {
+          method: 'DELETE'
+        });
+        if (!response.ok) {
+          const data = await response.json();
+          throw new Error(data.error || 'Error al eliminar');
+        }
+        alert('Galleta eliminada correctamente');
+        loadCookies();
+      } catch (error) {
+        console.error('Error:', error);
+        alert(error.message || 'Error al eliminar la galleta');
+      }
+    }
+
+    async function updateAllPrices() {
+      const percentage = parseFloat(document.getElementById('percentage-input').value);
+      if (isNaN(percentage)) {
+        alert('Porcentaje no válido');
+        return;
+      }
+      if (!confirm(`¿Actualizar todos los precios en ${percentage}%?`)) return;
+
+      try {
+        const response = await fetchWithAuth(`${API_BASE}/admin/cookies/price-all`, {
+          method: 'PUT',
+          body: JSON.stringify({ percentage })
+        });
+        if (!response.ok) throw new Error('Error al actualizar precios');
+        alert(`Precios actualizados en ${percentage}%`);
+        loadCookies();
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al actualizar los precios');
+      }
+    }
+
+    document.getElementById('new-cookie-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        slug: document.getElementById('new-slug').value,
+        name_es: document.getElementById('new-name-es').value,
+        name_en: document.getElementById('new-name-en').value,
+        desc_es: document.getElementById('new-desc-es').value,
+        desc_en: document.getElementById('new-desc-en').value,
+        price: parseFloat(document.getElementById('new-price').value),
+        image: document.getElementById('new-image').value || 'default.jpg'
+      };
+
+      if (!confirm(`¿Crear galleta "${data.name_es}"?`)) return;
+
+      try {
+        const response = await fetchWithAuth(`${API_BASE}/admin/cookies`, {
+          method: 'POST',
+          body: JSON.stringify(data)
+        });
+        if (!response.ok) {
+          const err = await response.json();
+          throw new Error(err.error || 'Error al crear');
+        }
+        alert('Galleta creada correctamente');
+        e.target.reset();
+        loadCookies();
+      } catch (error) {
+        console.error('Error:', error);
+        alert(error.message || 'Error al crear la galleta');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadOrders();
+      loadCookies();
+    });
+  </script>
 </body>
 </html>

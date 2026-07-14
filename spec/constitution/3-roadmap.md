@@ -27,3 +27,6 @@
 
 ### 008 — Conexión front-backend — HECHO
 - Modal login, fetch real, sin localStorage
+
+### 009 — Panel admin — HECHO
+- admin.html, rutas /admin y /admin/data, middleware requiereAdmin, usuario admin seed
