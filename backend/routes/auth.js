@@ -32,7 +32,7 @@ router.post('/api/auth/register', async (req, res) => {
 
     req.session.userId = result.insertId;
 
-    res.status(201).json({ id: result.insertId, name: name.trim(), email: email.trim().toLowerCase() });
+    res.status(201).json({ id: result.insertId, name: name.trim(), email: email.trim().toLowerCase(), role: 'customer' });
   } catch (err) {
     if (err.message && err.message.includes('UNIQUE constraint failed')) {
       return res.status(409).json({ error: 'Este email ya está registrado' });
@@ -51,7 +51,7 @@ router.post('/api/auth/login', async (req, res) => {
     }
 
     const [rows] = await pool.query(
-      'SELECT id, name, email, password_hash FROM users WHERE email = ?',
+      'SELECT id, name, email, password_hash, role FROM users WHERE email = ?',
       [email.trim().toLowerCase()]
     );
 
@@ -68,7 +68,7 @@ router.post('/api/auth/login', async (req, res) => {
 
     req.session.userId = user.id;
 
-    res.json({ id: user.id, name: user.name, email: user.email });
+    res.json({ id: user.id, name: user.name, email: user.email, role: user.role });
   } catch (err) {
     console.error('Error en login:', err);
     res.status(500).json({ error: 'Error al iniciar sesión' });
@@ -92,7 +92,7 @@ router.get('/api/auth/me', async (req, res) => {
 
   try {
     const [rows] = await pool.query(
-      'SELECT id, name, email FROM users WHERE id = ?',
+      'SELECT id, name, email, role FROM users WHERE id = ?',
       [req.session.userId]
     );
 

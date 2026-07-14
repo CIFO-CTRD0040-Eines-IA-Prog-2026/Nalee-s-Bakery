@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Admin — NALEE's Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">NALEE's Bakery</a>
+      <nav class="header__nav" id="header-nav">
+        <a href="/" class="header__link" data-i18n="nav_galletas">Galletas</a>
+        <a href="/" class="header__link">Panel Admin</a>
+      </nav>
+      <div class="header__actions">
+        <a href="/" class="header__nav-link--login">Volver a tienda</a>
+      </div>
+      <button class="header__menu-btn" id="menu-btn" aria-label="Menú de navegación">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card" style="max-width:600px;">
+      <div class="auth-card__icon">&#128736;</div>
+      <h1 class="auth-card__title">Panel de Administración</h1>
+      <p style="text-align:center;margin-bottom:1.5rem;">Bienvenido al panel de administración de NALEE's Bakery.</p>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <a href="/admin/data" target="_blank" class="auth-card__btn" style="text-decoration:none;text-align:center;">Ver datos (JSON)</a>
+        <a href="/" class="auth-card__btn" style="text-decoration:none;text-align:center;background:var(--color-marron-claro);color:var(--color-marron-oscuro);">Volver a la tienda</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

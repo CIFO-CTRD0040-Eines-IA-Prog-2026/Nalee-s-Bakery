@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const authUser = document.getElementById('auth-user');
   const logoutItem = document.getElementById('logout-item');
   const logoutLink = document.getElementById('logout-link');
+  const adminLink = document.getElementById('admin-link');
   const overlay = document.getElementById('modal-overlay');
   const modalClose = document.getElementById('modal-close');
 
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         authUser.style.display = 'inline';
         logoutLink.style.display = 'inline';
         if (logoutItem) logoutItem.style.display = 'inline';
+        if (user.role === 'admin' && adminLink) adminLink.style.display = 'inline';
         if (typeof cargarPedidos === 'function') cargarPedidos();
       }
     } catch (e) {}
@@ -118,6 +120,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       authUser.style.display = 'none';
       logoutLink.style.display = 'none';
       if (logoutItem) logoutItem.style.display = 'none';
+      if (adminLink) adminLink.style.display = 'none';
       if (typeof ocultarPedidos === 'function') ocultarPedidos();
     });
   }

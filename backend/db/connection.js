@@ -1,6 +1,7 @@
 const initSqlJs = require('sql.js');
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcryptjs');
 
 let db = null;
 
@@ -28,9 +29,14 @@ async function getDb() {
     name TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
+    role TEXT NOT NULL DEFAULT 'customer',
     lang TEXT NOT NULL DEFAULT 'es',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   )`);
+
+  try {
+    db.run('ALTER TABLE users ADD COLUMN role TEXT NOT NULL DEFAULT \'customer\'');
+  } catch (e) {}
 
   db.run(`CREATE TABLE IF NOT EXISTS cookies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -83,6 +89,18 @@ async function getDb() {
       insertStmt.reset();
     }
     insertStmt.free();
+  }
+
+  const adminEmail = 'admin@nalees.com';
+  const checkStmt = db.prepare('SELECT id FROM users WHERE email = ?');
+  checkStmt.bind([adminEmail]);
+  const adminExists = checkStmt.step();
+  checkStmt.free();
+  if (!adminExists) {
+    const adminHash = bcrypt.hashSync('admin1234', 10);
+    db.run('INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?, ?)', [
+      'Admin NALEE', adminEmail, adminHash, 'admin'
+    ]);
   }
 
   const buf = db.export();

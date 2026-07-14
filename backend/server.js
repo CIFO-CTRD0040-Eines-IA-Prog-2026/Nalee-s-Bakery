@@ -7,6 +7,7 @@ const pool = require('./db/connection');
 const authRoutes = require('./routes/auth');
 const cookiesRoutes = require('./routes/cookies');
 const ordersRoutes = require('./routes/orders');
+const { requiereAdmin } = require('./middleware/sesion');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,29 @@ app.use(session({
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+app.get('/admin/data', async (req, res) => {
+  try {
+    const [users] = await pool.query(`
+      SELECT u.id, u.name, u.email, u.created_at,
+             COUNT(o.id) AS total_pedidos,
+             COALESCE(SUM(o.total), 0) AS gasto_total
+      FROM users u
+      LEFT JOIN orders o ON o.user_id = u.id
+      GROUP BY u.id
+      ORDER BY u.id
+    `);
+    const [orders] = await pool.query(`
+      SELECT o.id, o.user_id, u.name AS cliente, o.subtotal, o.discount, o.total, o.status, o.created_at
+      FROM orders o
+      JOIN users u ON u.id = o.user_id
+      ORDER BY o.created_at DESC
+    `);
+    res.json({ clientes: users, pedidos: orders });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.get('/health', async (req, res) => {
   try {
     await pool.query('SELECT 1');
@@ -46,6 +70,10 @@ app.get('/registro', (req, res) => {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
+
+app.get('/admin', requiereAdmin, (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'admin.html'));
 });
 
 app.use(authRoutes);

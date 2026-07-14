@@ -206,6 +206,17 @@ header {
   color: var(--color-rosa-oscuro);
 }
 
+.header__admin-link {
+  font-size: var(--fs-small);
+  color: var(--color-rosa-oscuro);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header__admin-link:hover {
+  color: var(--color-marron-oscuro);
+}
+
 .header__menu-btn {
   display: flex;
   flex-direction: column;
