@@ -1,1 +1,1 @@
-- IMPORTANTE LEE AGENTS.md y empieza el proyecto, ya veras que la feat 001 a 003 esta hecha. Pero solo quiero que continuees con la 004-009.
+- IMPORTANTE LEE AGENTS.md y empieza el proyecto.
