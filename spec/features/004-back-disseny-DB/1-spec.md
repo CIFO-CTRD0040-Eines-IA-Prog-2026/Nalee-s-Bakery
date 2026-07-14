@@ -69,7 +69,7 @@ Diseño y creación del esquema de base de datos para NALEE's Bakery: almacenar 
 | red-velvet | Red Velvet | Red Velvet | Galleta suave de cacao con cobertura de queso | Soft cocoa cookie with cream cheese topping | 3.00 | red-velvet.jpg |
 | mantequilla | Mantequilla | Butter | Galleta de mantequilla tradicional, crujiente y suave | Traditional butter cookie, crispy and soft | 2.00 | mantequilla.jpg |
 | jengibre | Jengibre | Ginger | Galleta especiada de jengibre con un toque de canela | Spiced ginger cookie with a touch of cinnamon | 2.50 | jengibre.jpg |
-| peanut-butter | Peanut Butter | Peanut Butter | Galleta cremosa de cacahuete | Creamy peanut butter cookie | 3.00 | peanut-butter.jpg |
+| peanut-butter | Peanut Butter | Peanut Butter | Galleta crujiente y cremosa de cacahuete bañada de azúcar | Sugar-showered crunchy and creamy peanut butter cookie | 3.00 | peanut-butter.jpg |
 
 ## Criterios de aceptación
 
