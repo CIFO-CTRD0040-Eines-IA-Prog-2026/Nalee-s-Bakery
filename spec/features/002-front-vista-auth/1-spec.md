@@ -1,33 +1,33 @@
-# 002 — Login i registre (amb validació)
+# 002 — Login y registro (con validación)
 
-## Descripció
-Permet a l'usuari registrar-se, iniciar sessió i tancar sessió per accedir a la gestió de comandes.
+## Descripción
+Permite al usuario registrarse, iniciar sesión y cerrar sesión para acceder a la gestión de pedidos.
 
-## Pàgines
-- `login.html`: targeta centrada amb títol "Iniciar sesión", icona de galeta, email, contrasenya, botó "Entrar" i enllaç a registre.
-- `registro.html`: targeta centrada amb icona de cuiner, nom, email, contrasenya, confirmar contrasenya, botó "Crear cuenta" i enllaç a login.
-- Header amb navegació reduïda (Galletas, Galería, Sobre Nosotros, Contacto).
+## Páginas
+- `login.html`: tarjeta centrada con título "Iniciar sesión", icono de galleta, email, contraseña, botón "Entrar" y enlace a registro.
+- `registro.html`: tarjeta centrada con icono de cocinero, nombre, email, contraseña, confirmar contraseña, botón "Crear cuenta" y enlace a login.
+- Header con navegación reducida (Galletas, Galería, Sobre Nosotros, Contacto).
 
-## Validació en enviar
-- Camps buits → "Todos los campos son obligatorios"
-- Email mal format → controlat per `type="email"` HTML5
-- Contrasenya < 4 caràcters → "La contraseña debe tener al menos 4 caracteres"
-- Contrasenyes no coincideixen → "Las contraseñas no coinciden"
-- Email ja registrat → "Ya existe una cuenta con ese email"
-- Credencials incorrectes → "Email o contraseña incorrectos"
+## Validación al enviar
+- Campos vacíos → "Todos los campos son obligatorios"
+- Email mal formato → controlado por `type="email"` HTML5
+- Contraseña < 4 caracteres → "La contraseña debe tener al menos 4 caracteres"
+- Contraseñas no coinciden → "Las contraseñas no coinciden"
+- Email ya registrado → "Ya existe una cuenta con ese email"
+- Credenciales incorrectas → "Email o contraseña incorrectos"
 
-## Comportament esperat
-1. L'usuari accedeix a `login.html` des del header
-2. Introdueix credencials i envia
-3. Si són correctes → redirigir a `index.html` amb sessió iniciada
-4. Si són incorrectes → mostrar error
-5. Pot registrar-se des de `registro.html`
-6. En loguejar-se, el header canvia: "Iniciar sesión" → email de l'usuari + "Cerrar sesión"
-7. L'estat de sessió es guarda a `localStorage`
+## Comportamiento esperado
+1. El usuario accede a `login.html` desde el header
+2. Introduce credenciales y envía
+3. Si son correctas → redirigir a `index.html` con sesión iniciada
+4. Si son incorrectas → mostrar error
+5. Puede registrarse desde `registro.html`
+6. Al iniciar sesión, el header cambia: "Iniciar sesión" → email del usuario + "Cerrar sesión"
+7. El estado de sesión se guarda en `localStorage`
 
-## Criteris d'acceptació
-[ ] Les dues pàgines comparteixen estil (tokens) i s'enllacen entre elles.
-[ ] Enviar-ho tot buit mostra missatge d'error i no navega.
-[ ] Contrasenyes diferents al registre → missatge d'error.
-[ ] Login vàlid porta a `index.html`; registre vàlid, a `login.html`.
-[ ] Targeta centrada i llegible a 375px i a 1280px.
+## Criterios de aceptación
+[ ] Las dos páginas comparten estilo (tokens) y se enlazan entre ellas.
+[ ] Enviar todo vacío muestra mensaje de error y no navega.
+[ ] Contraseñas diferentes en el registro → mensaje de error.
+[ ] Login válido lleva a `index.html`; registro válido, a `login.html`.
+[ ] Tarjeta centrada y legible a 375px y a 1280px.

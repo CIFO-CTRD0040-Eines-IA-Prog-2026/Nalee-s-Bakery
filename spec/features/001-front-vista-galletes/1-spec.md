@@ -1,24 +1,24 @@
-# 001 — Vista de galletes (catàleg de productes)
+# 001 — Vista de galletas (catálogo de productos)
 
-## Descripció
-Pantalla principal on l'usuari pot veure el catàleg de galletes artesanes, seleccionar quantitats i gestionar la seva comanda abans d'enviar-la.
+## Descripción
+Pantalla principal donde el usuario puede ver el catálogo de galletas artesanas, seleccionar cantidades y gestionar su pedido antes de enviarlo.
 
-## Contingut
-- Capçalera: logo "NALEE's Bakery", nav amb enllaços a seccions, selector d'idioma, enllaç d'inici de sessió.
-- Hero: títol "Galletas artesanas con amor", subtítol, CTA "Descubre nuestras galletas".
-- Secció `#galletas`:
-  - Títol "Nuestras Galletas"
-  - Graella de 6 targetes de galletes, cadascuna amb:
-    - Imatge de la galleta (background-image)
-    - Nom (Playfair Display)
-    - Descripció curta
-    - Selector de quantitat (botons - / + , input numèric)
-- Secció `#pedido-resumen`: oculta per defecte, es mostra en seleccionar quantitats.
-- Galeria, Sobre Nosotros, Testimonis, Ubicació, Contacte, Footer.
+## Contenido
+- Cabecera: logo "NALEE's Bakery", nav con enlaces a secciones, selector de idioma, enlace de inicio de sesión.
+- Hero: título "Galletas artesanas con amor", subtítulo, CTA "Descubre nuestras galletas".
+- Sección `#galletas`:
+  - Título "Nuestras Galletas"
+  - Cuadrícula de 6 tarjetas de galletas, cada una con:
+    - Imagen de la galleta (background-image)
+    - Nombre (Playfair Display)
+    - Descripción corta
+    - Selector de cantidad (botones - / + , input numérico)
+- Sección `#pedido-resumen`: oculta por defecto, se muestra al seleccionar cantidades.
+- Galería, Sobre Nosotros, Testimonios, Ubicación, Contacto, Footer.
 
-## Catàleg de galletes
+## Catálogo de galletas
 
-| Classe CSS | Nom | Descripció | Preu |
+| Clase CSS | Nombre | Descripción | Precio |
 |---|---|---|---|
 | `galleta__img--avena` | Avena | Galleta de avena con pasas y un toque de canela | 2.50 € |
 | `galleta__img--chocolate-chips` | Chocolate Chips | Galleta clásica con pepitas de chocolate | 2.50 € |
@@ -27,16 +27,16 @@ Pantalla principal on l'usuari pot veure el catàleg de galletes artesanes, sele
 | `galleta__img--jengibre` | Jengibre | Galleta especiada de jengibre con un toque de canela | 2.50 € |
 | `galleta__img--peanut-butter` | Peanut Butter | Galleta cremosa de cacahuete | 3.00 € |
 
-## Comportament esperat
-1. L'usuari veu el catàleg complet
-2. Pot seleccionar quantitat per a cada galleta
-3. Es mostra un resum de la comanda amb preu total en temps real
-4. Pot enviar la comanda (autenticació requerida)
-5. Si no ha iniciat sessió, es redirigeix a `login.html`
+## Comportamiento esperado
+1. El usuario ve el catálogo completo
+2. Puede seleccionar cantidad para cada galleta
+3. Se muestra un resumen del pedido con precio total en tiempo real
+4. Puede enviar el pedido (autenticación requerida)
+5. Si no ha iniciado sesión, se redirige a `login.html`
 
-## Criteris d'acceptació
-[ ] Es veuen l'hero, el catàleg de 6 galletes i el resum ocult.
-[ ] Cada targeta té imatge, nom, descripció i selector de quantitat.
-[ ] Només colors dels tokens de la skill estil-nalees.
-[ ] Bé a 375px i a 1280px, sense scroll horitzontal.
-[ ] aria-label als botons i focus visible.
+## Criterios de aceptación
+[ ] Se ven el hero, el catálogo de 6 galletas y el resumen oculto.
+[ ] Cada tarjeta tiene imagen, nombre, descripción y selector de cantidad.
+[ ] Solo colores de los tokens de la skill estil-nalees.
+[ ] Bien a 375px y a 1280px, sin scroll horizontal.
+[ ] aria-label en los botones y focus visible.

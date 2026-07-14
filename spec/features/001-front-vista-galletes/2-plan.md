@@ -1,21 +1,21 @@
-# Pla — 001 Vista de galletes
+# Plan — 001 Vista de galletas
 
-## Fitxers
+## Archivos
 - `index.html`: estructura completa de la landing page.
-- `style.css`: estils globals seguint la skill estil-nalees.
+- `style.css`: estilos globales siguiendo la skill estil-nalees.
 
 ## Estructura HTML
-- Header fix amb logo, nav, selector d'idioma i botó de login.
-- Hero amb fons gradient, títol, subtítol i CTA.
-- Galletas: grid de 6 targetes amb imatge (background), nom, descripció i selector quantitat.
-- Galeria: grid d'imatges 4 columnes (1 destacada span 2).
-- Nosotros: 2 columnes (text + imatge).
-- Testimonis: 3 targetes amb avatar, text, nom i rol.
-- Ubicació: 2 columnes (info + mapa placeholder).
-- Contacte: formulari centrat.
-- Footer: 4 columnes (logo, enllaços, xarxes, newsletter).
+- Header fijo con logo, nav, selector de idioma y botón de login.
+- Hero con fondo gradient, título, subtítulo y CTA.
+- Galletas: grid de 6 tarjetas con imagen (background), nombre, descripción y selector cantidad.
+- Galería: grid de imágenes 4 columnas (1 destacada span 2).
+- Nosotros: 2 columnas (texto + imagen).
+- Testimonios: 3 tarjetas con avatar, texto, nombre y rol.
+- Ubicación: 2 columnas (info + mapa placeholder).
+- Contacto: formulario centrado.
+- Footer: 4 columnas (logo, enlaces, redes, newsletter).
 
-## Selectors DOM estables
+## Selectores DOM estables
 ```
 #galletas · .galleta[data-sabor][data-precio]
 #pedido-resumen · #pedido-lista · #pedido-subtotal · #pedido-descuento · #pedido-total · #pedido-enviar
@@ -25,7 +25,7 @@
 .contacto__form · .footer__newsletter
 ```
 
-## Imatges
+## Imágenes
 - `images/Galletas/avena.jpg`, `chocolate-chips.jpg`, `red-velvet.jpg`, etc.
 - `images/Avatares/Ana-Martinez.avif`, etc.
 - `images/Nosotros/Nalee.jpg`

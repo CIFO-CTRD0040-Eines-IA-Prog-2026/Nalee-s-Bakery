@@ -1,10 +1,10 @@
-# Missió — NALEE's Bakery
+# Misión — NALEE's Bakery
 
-## Producte
-NALEE's Bakery: una webapp de catàleg i comanda de galletes artesanes amb backend propi. Cada persona té el seu compte: es registra, entra, selecciona galletes, fa la comanda i l'envia.
+## Producto
+NALEE's Bakery: una webapp de catálogo y pedido de galletas artesanas con backend propio. Cada persona tiene su cuenta: se registra, accede, selecciona galletas, hace el pedido y lo envía.
 
-## Objectiu
-Que un usuari nou pugui registrar-se, navegar pel catàleg, seleccionar productes i fer una comanda de manera ràpida i intuïtiva, amb accés fàcil i dades persistents amb seguretat.
+## Objetivo
+Que un usuario nuevo pueda registrarse, navegar por el catálogo, seleccionar productos y hacer un pedido de forma rápida e intuitiva, con acceso fácil y datos persistentes con seguridad.
 
-## Públic objectiu
-Amants de la rebosteria artesana que volen fer comandes des de qualsevol dispositiu.
+## Público objetivo
+Amantes de la repostería artesana que quieren hacer pedidos desde cualquier dispositivo.

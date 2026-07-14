@@ -1,34 +1,34 @@
-# Pla — 003 Interaccions
+# Plan — 003 Interacciones
 
-## Fitxers JS
-- `i18n.js`: internacionalització (llegir, aplicar, toggle, dropdown).
-- `auth.js`: registre, login, sessió, logout.
-- `pedido.js`: gestió de quantitats, resum, enviament.
-- `lang/translations.js`: diccionari ES/EN.
+## Archivos JS
+- `i18n.js`: internacionalización (leer, aplicar, toggle, dropdown).
+- `auth.js`: registro, login, sesión, logout.
+- `pedido.js`: gestión de cantidades, resumen, envío.
+- `lang/translations.js`: diccionario ES/EN.
 
-## Navegació
-- `a[href^="#"]` → scrollIntoView smooth amb offset del header.
-- IntersectionObserver (opcional) per ressaltar enllaç actiu.
+## Navegación
+- `a[href^="#"]` → scrollIntoView smooth con offset del header.
+- IntersectionObserver (opcional) para resaltar enlace activo.
 
-## Selector d'idioma (i18n.js)
+## Selector de idioma (i18n.js)
 - `applyTranslations(lang)`: recorre `[data-i18n]`, `[data-i18n-html]`, `[data-i18n-placeholder]`.
-- `changeLang(lang)`: aplica i actualitza resum.
-- `initI18n()`: aplica idioma guardat, setup toggle + dropdown + click outside.
+- `changeLang(lang)`: aplica y actualiza resumen.
+- `initI18n()`: aplica idioma guardado, setup toggle + dropdown + click outside.
 
-## Gestió de quantitats (pedido.js)
-- Click delegat a `.galleta__btn--mas` / `.galleta__btn--menos`.
-- `change` / `input` a `.galleta__cantidad`.
-- `actualizarResumen()`: recorre inputs, calcula subtotals, mostra/amaga resum.
+## Gestión de cantidades (pedido.js)
+- Click delegado en `.galleta__btn--mas` / `.galleta__btn--menos`.
+- `change` / `input` en `.galleta__cantidad`.
+- `actualizarResumen()`: recorre inputs, calcula subtotales, muestra/oculta resumen.
 
-## Enviament
-- Click a `#pedido-enviar`:
-  - Comprovar sessió (`localStorage.getItem('session')`).
+## Envío
+- Click en `#pedido-enviar`:
+  - Comprobar sesión (`localStorage.getItem('session')`).
   - Si no → `window.location.href = 'login.html'`.
-  - Si sí → alert de confirmació + reiniciar cantitats.
+  - Si sí → alert de confirmación + reiniciar cantidades.
 
-## Preus de referència
+## Precios de referencia
 
-| Galleta | Preu |
+| Galleta | Precio |
 |---|---|
 | Avena | 2.50 € |
 | Chocolate Chips | 2.50 € |

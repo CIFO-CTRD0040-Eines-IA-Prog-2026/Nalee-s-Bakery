@@ -1,21 +1,21 @@
-# Pla — 002 Vistes auth
+# Plan — 002 Vistas auth
 
-## Fitxers
+## Archivos
 - `login.html`, `registro.html`, `auth.js`.
 
 ## Layout
-- Hereten el header i footer de `index.html`.
-- Body min-h-screen amb flex per centrar targeta.
-- Targeta max-w-sm (420px), bg blanca, border-radius 1.5rem, ombra.
+- Heredan el header y footer de `index.html`.
+- Body min-h-screen con flex para centrar tarjeta.
+- Tarjeta max-w-sm (420px), bg blanca, border-radius 1.5rem, sombra.
 
-## Formularis
-- `novalidate` desactivat: la validació JS gestiona els missatges.
-- En submit: preventDefault, validar, pintar errors, navegar si tot correcte.
+## Formularios
+- `novalidate` desactivado: la validación JS gestiona los mensajes.
+- En submit: preventDefault, validar, pintar errores, navegar si todo correcto.
 
-## Lògica (auth.js)
-- Registre: validar camps, comprovar email únic a localStorage, guardar usuari, redirigir a login.
-- Login: buscar usuari per email, comparar password, guardar sessió, redirigir.
-- Session UI: en carregar index.html, comprovar sessió, mostrar/ocultar elements.
+## Lógica (auth.js)
+- Registro: validar campos, comprobar email único en localStorage, guardar usuario, redirigir a login.
+- Login: buscar usuario por email, comparar password, guardar sesión, redirigir.
+- Session UI: al cargar index.html, comprobar sesión, mostrar/ocultar elementos.
 
 ## IDs estables
 ```

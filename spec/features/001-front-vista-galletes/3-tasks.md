@@ -1,10 +1,10 @@
-# Tasques — 001 Vista de galletes
+# Tareas — 001 Vista de galletas
 
-[ ] T1 — `index.html` estructura base, fonts Google, enllaços a CSS i JS.
+[ ] T1 — `index.html` estructura base, fonts Google, enlaces a CSS y JS.
 [ ] T2 — Header: logo, nav, lang toggle, auth link.
-[ ] T3 — Hero amb títol, subtítol i CTA.
-[ ] T4 — Galletas grid amb 6 targetes i selectors de quantitat.
-[ ] T5 — Resum de comanda ocult (`#pedido-resumen`).
-[ ] T6 — Galeria, Nosotros, Testimonis, Ubicació, Contacte, Footer.
-[ ] T7 — `style.css` complet amb variables, reset, seccions i responsive.
-[ ] T8 — Verificació amb loop-verificacio-front.
+[ ] T3 — Hero con título, subtítulo y CTA.
+[ ] T4 — Galletas grid con 6 tarjetas y selectores de cantidad.
+[ ] T5 — Resumen de pedido oculto (`#pedido-resumen`).
+[ ] T6 — Galería, Nosotros, Testimonios, Ubicación, Contacto, Footer.
+[ ] T7 — `style.css` completo con variables, reset, secciones y responsive.
+[ ] T8 — Verificación con loop-verificacio-front.

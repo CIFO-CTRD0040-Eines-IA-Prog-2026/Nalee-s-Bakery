@@ -1,14 +1,14 @@
-# 004 — Disseny de base de dades
+# 004 — Diseño de base de datos
 
-## Descripció
+## Descripción
 
-Disseny i creació de l'esquema de base de dades per a NALEE's Bakery: emmagatzemar usuaris, productes (galletes) i comandes amb les seves línies.
+Diseño y creación del esquema de base de datos para NALEE's Bakery: almacenar usuarios, productos (galletas) y pedidos con sus líneas.
 
-## Taules
+## Tablas
 
 ### `users`
 
-| Columna | Tipus | Restriccions |
+| Columna | Tipo | Restricciones |
 |---|---|---|
 | id | BIGINT UNSIGNED | PK, AUTO_INCREMENT |
 | name | VARCHAR(100) | NOT NULL |
@@ -19,7 +19,7 @@ Disseny i creació de l'esquema de base de dades per a NALEE's Bakery: emmagatze
 
 ### `cookies`
 
-| Columna | Tipus | Restriccions |
+| Columna | Tipo | Restricciones |
 |---|---|---|
 | id | BIGINT UNSIGNED | PK, AUTO_INCREMENT |
 | slug | VARCHAR(50) | NOT NULL, UNIQUE |
@@ -33,7 +33,7 @@ Disseny i creació de l'esquema de base de dades per a NALEE's Bakery: emmagatze
 
 ### `orders`
 
-| Columna | Tipus | Restriccions |
+| Columna | Tipo | Restricciones |
 |---|---|---|
 | id | BIGINT UNSIGNED | PK, AUTO_INCREMENT |
 | user_id | BIGINT UNSIGNED | NOT NULL, FK → users(id) |
@@ -45,7 +45,7 @@ Disseny i creació de l'esquema de base de dades per a NALEE's Bakery: emmagatze
 
 ### `order_lines`
 
-| Columna | Tipus | Restriccions |
+| Columna | Tipo | Restricciones |
 |---|---|---|
 | id | BIGINT UNSIGNED | PK, AUTO_INCREMENT |
 | order_id | BIGINT UNSIGNED | NOT NULL, FK → orders(id) ON DELETE CASCADE |
@@ -54,13 +54,13 @@ Disseny i creació de l'esquema de base de dades per a NALEE's Bakery: emmagatze
 | unit_price | DECIMAL(5,2) | NOT NULL |
 | subtotal | DECIMAL(7,2) | NOT NULL |
 
-## Relacions
+## Relaciones
 
-- `orders.user_id` → `users.id` (1 usuari N comandes)
-- `order_lines.order_id` → `orders.id` (1 comanda N línies, CASCADE)
-- `order_lines.cookie_id` → `cookies.id` (1 galleta apareix a N línies)
+- `orders.user_id` → `users.id` (1 usuario N pedidos)
+- `order_lines.order_id` → `orders.id` (1 pedido N líneas, CASCADE)
+- `order_lines.cookie_id` → `cookies.id` (1 galleta aparece en N líneas)
 
-## Catàleg de galletes (dades inicials)
+## Catálogo de galletas (datos iniciales)
 
 | slug | name_es | name_en | desc_es | desc_en | price | image |
 |---|---|---|---|---|---|---|
@@ -71,10 +71,10 @@ Disseny i creació de l'esquema de base de dades per a NALEE's Bakery: emmagatze
 | jengibre | Jengibre | Ginger | Galleta especiada de jengibre con un toque de canela | Spiced ginger cookie with a touch of cinnamon | 2.50 | jengibre.jpg |
 | peanut-butter | Peanut Butter | Peanut Butter | Galleta cremosa de cacahuete | Creamy peanut butter cookie | 3.00 | peanut-butter.jpg |
 
-## Criteris d'acceptació
+## Criterios de aceptación
 
-- [ ] L'esquema de base de dades es crea automàticament en arrencar el servidor (`db/connection.js`).
-- [ ] Les 4 taules es creen amb SQLite (INTEGER PRIMARY KEY AUTOINCREMENT, TEXT, REAL).
-- [ ] Les FK estan definides amb CASCADE a order_lines.
-- [ ] El seed de 6 galletes s'insereix automàticament si la taula està buida.
-- [ ] S'ha afegit la secció "Backend" al fitxer de tech-stack de la constitució (Node.js + Express + SQLite).
+- [ ] El esquema de base de datos se crea automáticamente al arrancar el servidor (`db/connection.js`).
+- [ ] Las 4 tablas se crean con SQLite (INTEGER PRIMARY KEY AUTOINCREMENT, TEXT, REAL).
+- [ ] Las FK están definidas con CASCADE en order_lines.
+- [ ] El seed de 6 galletas se inserta automáticamente si la tabla está vacía.
+- [ ] Se ha añadido la sección "Backend" al archivo de tech-stack de la constitución (Node.js + Express + SQLite).

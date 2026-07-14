@@ -1,10 +1,10 @@
-# Tasques — 003 Interaccions
+# Tareas — 003 Interacciones
 
-[ ] T1 — `i18n.js`: aplicar traduccions, toggle dropdown, persistir idioma.
-[ ] T2 — `lang/translations.js`: diccionari ES/EN complet.
-[ ] T3 — `auth.js`: registre, login, sessió, logout.
-[ ] T4 — `pedido.js`: gestió de quantitats, resum, enviament.
-[ ] T5 — Scroll suau per enllaços interns.
-[ ] T6 — Formulari de contacte amb confirmació.
-[ ] T7 — Newsletter amb confirmació.
-[ ] T8 — Verificació amb loop-verificacio-front.
+[ ] T1 — `i18n.js`: aplicar traducciones, toggle dropdown, persistir idioma.
+[ ] T2 — `lang/translations.js`: diccionario ES/EN completo.
+[ ] T3 — `auth.js`: registro, login, sesión, logout.
+[ ] T4 — `pedido.js`: gestión de cantidades, resumen, envío.
+[ ] T5 — Scroll suave para enlaces internos.
+[ ] T6 — Formulario de contacto con confirmación.
+[ ] T7 — Newsletter con confirmación.
+[ ] T8 — Verificación con loop-verificacio-front.

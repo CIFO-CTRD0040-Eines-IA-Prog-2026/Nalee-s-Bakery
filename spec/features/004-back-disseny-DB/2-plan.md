@@ -1,36 +1,36 @@
-# Pla — 004 Disseny de base de dades
+# Plan — 004 Diseño de base de datos
 
-## Estructura de fitxers
+## Estructura de archivos
 
 ```
 database/
 ├── schema.sql          # CREATE DATABASE + CREATE TABLE
-├── seed.sql            # INSERT catàleg de galletes
-└── README.md           # Instruccions d'ús (opcional)
+├── seed.sql            # INSERT catálogo de galletas
+└── README.md           # Instrucciones de uso (opcional)
 ```
 
 ## Backend runtime
 
-- Node.js amb Express + better-sqlite3.
-- Fitxers a `backend/`.
-- `backend/server.js`: punt d'entrada.
-- `backend/db/connection.js`: connexió SQLite que crea esquema i seed automàticament.
+- Node.js con Express + better-sqlite3.
+- Archivos en `backend/`.
+- `backend/server.js`: punto de entrada.
+- `backend/db/connection.js`: conexión SQLite que crea esquema y seed automáticamente.
 
-## Passos
+## Pasos
 
-1. Actualitzar `spec/constitution/2-tech-stack.md` amb la pila backend.
-2. Crear `backend/db/connection.js` amb SQLite (CREATE TABLE IF NOT EXISTS + seed).
-3. Crear `backend/` amb package.json i server.js.
-4. Verificació: arrencar servidor i comprovar que la BD es crea a `backend/data/`.
+1. Actualizar `spec/constitution/2-tech-stack.md` con la pila backend.
+2. Crear `backend/db/connection.js` con SQLite (CREATE TABLE IF NOT EXISTS + seed).
+3. Crear `backend/` con package.json y server.js.
+4. Verificación: arrancar servidor y comprobar que la BD se crea en `backend/data/`.
 
-## Selectors / contractes per al frontend
+## Selectores / contratos para el frontend
 
-El frontend farà fetch a:
+El frontend hará fetch a:
 
-| Mètode | Endpoint | Descripció |
+| Método | Endpoint | Descripción |
 |---|---|---|
-| POST | /api/auth/login | Inici de sessió |
-| POST | /api/auth/register | Registre d'usuari |
-| GET | /api/cookies | Llistat de galletes |
-| POST | /api/orders | Crear comanda |
-| GET | /api/orders | Historial de comandes (autenticat) |
+| POST | /api/auth/login | Inicio de sesión |
+| POST | /api/auth/register | Registro de usuario |
+| GET | /api/cookies | Listado de galletas |
+| POST | /api/orders | Crear pedido |
+| GET | /api/orders | Historial de pedidos (autenticado) |

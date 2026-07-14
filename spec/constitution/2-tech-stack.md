@@ -2,25 +2,25 @@
 
 ## Frontend
 - HTML5, CSS3, JavaScript vanilla.
-- Tipografia: Google Fonts (Playfair Display + Source Sans 3).
-- CSS pur amb variables (sense Tailwind).
-- Estils seguint la skill **estil-nalees**.
-- Mobile-first. Responsive: 768px (tablet), 480px (mòbil).
+- Tipografía: Google Fonts (Playfair Display + Source Sans 3).
+- CSS puro con variables (sin Tailwind).
+- Estilos siguiendo la skill **estil-nalees**.
+- Mobile-first. Responsive: 768px (tablet), 480px (móvil).
 
-## Execució
-- Obrir `index.html` al navegador (Live Server).
+## Ejecución
+- Abrir `index.html` en el navegador (Live Server).
 
 ## Backend
-- Node.js (>=18) amb Express.
-- SQLite amb better-sqlite3 (BD local a `backend/data/`).
-- Esquema i seed automàtics en arrencar el servidor.
-- API REST a `/api/*`.
-- Autenticació amb sessions (cookie httpOnly + express-session).
+- Node.js (>=18) con Express.
+- SQLite con better-sqlite3 (BD local en `backend/data/`).
+- Esquema y seed automáticos al arrancar el servidor.
+- API REST en `/api/*`.
+- Autenticación con sesiones (cookie httpOnly + express-session).
 
-## Documentació
-- Sintaxi actualitzada amb el MCP Context7.
+## Documentación
+- Sintaxis actualizada con el MCP Context7.
 
-## Convencions
-- Contingut i codi en català o castellà.
+## Convenciones
+- Contenido y código en catalán o castellano.
 - Mobile-first.
-- IDs del DOM en kebab-case i estables: són el contracte entre HTML, JS i verificació.
+- IDs del DOM en kebab-case y estables: son el contrato entre HTML, JS y verificación.
