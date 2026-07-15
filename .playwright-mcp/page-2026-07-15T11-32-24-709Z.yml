@@ -1,0 +1,269 @@
+- generic [active] [ref=f13e1]:
+  - banner [ref=f13e2]:
+    - generic [ref=f13e3]:
+      - link "NALEE's Bakery" [ref=f13e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f13e5]:
+        - link "Tienda" [ref=f13e6] [cursor=pointer]:
+          - /url: /
+        - link "Panel Admin" [ref=f13e7] [cursor=pointer]:
+          - /url: /admin
+      - generic [ref=f13e8]:
+        - link "Volver a tienda" [ref=f13e9] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f13e10] [cursor=pointer]: Cerrar sesión
+  - main [ref=f13e11]:
+    - generic [ref=f13e12]:
+      - generic [ref=f13e13]:
+        - heading "Panel de Administración" [level=1] [ref=f13e14]
+        - generic [ref=f13e15]:
+          - link "Pedidos" [ref=f13e16] [cursor=pointer]:
+            - /url: "#pedidos"
+          - link "Confirmación" [ref=f13e17] [cursor=pointer]:
+            - /url: "#confirmacion"
+          - link "General" [ref=f13e18] [cursor=pointer]:
+            - /url: "#general"
+      - generic [ref=f13e19]:
+        - heading "Pedidos Recibidos" [level=2] [ref=f13e20]
+        - table [ref=f13e22]:
+          - rowgroup [ref=f13e23]:
+            - row [ref=f13e24]:
+              - columnheader "ID" [ref=f13e25]
+              - columnheader "Cliente" [ref=f13e26]
+              - columnheader "Fecha" [ref=f13e27]
+              - columnheader "Total" [ref=f13e28]
+              - columnheader "Estado" [ref=f13e29]
+              - columnheader "Acciones" [ref=f13e30]
+          - rowgroup [ref=f13e31]:
+            - row [ref=f13e32] [cursor=pointer]:
+              - cell "#11" [ref=f13e33]
+              - cell "Admin NALEE admin@nalees.com" [ref=f13e34]: Admin NALEEadmin@nalees.com
+              - cell "15/7/2026" [ref=f13e35]
+              - cell "2.50 €" [ref=f13e36]
+              - cell "Confirmado" [ref=f13e37]
+              - cell [ref=f13e39]:
+                - button "Marcar entregado" [ref=f13e40]
+            - row [ref=f13e41] [cursor=pointer]:
+              - cell "#10" [ref=f13e42]
+              - cell "Admin NALEE admin@nalees.com" [ref=f13e43]: Admin NALEEadmin@nalees.com
+              - cell "15/7/2026" [ref=f13e44]
+              - cell "24.50 €" [ref=f13e45]
+              - cell "Confirmado" [ref=f13e46]
+              - cell [ref=f13e48]:
+                - button "Marcar entregado" [ref=f13e49]
+            - row [ref=f13e50] [cursor=pointer]:
+              - cell "#9" [ref=f13e51]
+              - cell "Admin NALEE admin@nalees.com" [ref=f13e52]: Admin NALEEadmin@nalees.com
+              - cell "15/7/2026" [ref=f13e53]
+              - cell "16.00 €" [ref=f13e54]
+              - cell "Confirmado" [ref=f13e55]
+              - cell [ref=f13e57]:
+                - button "Marcar entregado" [ref=f13e58]
+            - row [ref=f13e59] [cursor=pointer]:
+              - cell "#8" [ref=f13e60]
+              - cell "Admin NALEE admin@nalees.com" [ref=f13e61]: Admin NALEEadmin@nalees.com
+              - cell "15/7/2026" [ref=f13e62]
+              - cell "16.00 €" [ref=f13e63]
+              - cell "Pendiente" [ref=f13e64]
+              - cell [ref=f13e66]:
+                - button "Confirmar" [ref=f13e67]
+            - row [ref=f13e68] [cursor=pointer]:
+              - cell "#7" [ref=f13e69]
+              - cell "Admin NALEE admin@nalees.com" [ref=f13e70]: Admin NALEEadmin@nalees.com
+              - cell "15/7/2026" [ref=f13e71]
+              - cell "18.50 €" [ref=f13e72]
+              - cell "Pendiente" [ref=f13e73]
+              - cell [ref=f13e75]:
+                - button "Confirmar" [ref=f13e76]
+            - row [ref=f13e77] [cursor=pointer]:
+              - cell "#6" [ref=f13e78]
+              - cell "Admin NALEE admin@nalees.com" [ref=f13e79]: Admin NALEEadmin@nalees.com
+              - cell "15/7/2026" [ref=f13e80]
+              - cell "7.50 €" [ref=f13e81]
+              - cell "Pendiente" [ref=f13e82]
+              - cell [ref=f13e84]:
+                - button "Confirmar" [ref=f13e85]
+            - row [ref=f13e86] [cursor=pointer]:
+              - cell "#5" [ref=f13e87]
+              - cell "Juanito juanito@gmail.com" [ref=f13e88]: Juanitojuanito@gmail.com
+              - cell "15/7/2026" [ref=f13e89]
+              - cell "78.75 €" [ref=f13e90]
+              - cell "Pendiente" [ref=f13e91]
+              - cell [ref=f13e93]:
+                - button "Confirmar" [ref=f13e94]
+            - row [ref=f13e95] [cursor=pointer]:
+              - cell "#4" [ref=f13e96]
+              - cell "Juanito juanito@gmail.com" [ref=f13e97]: Juanitojuanito@gmail.com
+              - cell "15/7/2026" [ref=f13e98]
+              - cell "78.75 €" [ref=f13e99]
+              - cell "Cancelado" [ref=f13e100]
+              - cell [ref=f13e102]
+            - row [ref=f13e103] [cursor=pointer]:
+              - cell "#3" [ref=f13e104]
+              - cell "Nan nan@email.com" [ref=f13e105]: Nannan@email.com
+              - cell "15/7/2026" [ref=f13e106]
+              - cell "15.50 €" [ref=f13e107]
+              - cell "Confirmado" [ref=f13e108]
+              - cell [ref=f13e110]:
+                - button "Marcar entregado" [ref=f13e111]
+            - row [ref=f13e112] [cursor=pointer]:
+              - cell "#2" [ref=f13e113]
+              - cell "Pepito pepito@gmail.com" [ref=f13e114]: Pepitopepito@gmail.com
+              - cell "15/7/2026" [ref=f13e115]
+              - cell "31.95 €" [ref=f13e116]
+              - cell "Entregado" [ref=f13e117]
+              - cell [ref=f13e119]
+            - row [ref=f13e120] [cursor=pointer]:
+              - cell "#1" [ref=f13e121]
+              - cell "Pepito pepito@gmail.com" [ref=f13e122]: Pepitopepito@gmail.com
+              - cell "15/7/2026" [ref=f13e123]
+              - cell "27.00 €" [ref=f13e124]
+              - cell "Entregado" [ref=f13e125]
+              - cell [ref=f13e127]
+      - generic [ref=f13e128]:
+        - heading "Confirmación de Pedidos" [level=2] [ref=f13e129]
+        - paragraph [ref=f13e130]: "Selecciona un pedido de la lista superior para cambiar su estado:"
+        - list [ref=f13e131]:
+          - listitem [ref=f13e132]:
+            - strong [ref=f13e133]: "Pendiente → Confirmado:"
+            - text: Cuando el admin acepta el pedido
+          - listitem [ref=f13e134]:
+            - strong [ref=f13e135]: "Confirmado → Entregado:"
+            - text: Cuando el cliente recibe el pedido
+      - generic [ref=f13e136]:
+        - heading "Cambios Generales" [level=2] [ref=f13e137]
+        - generic [ref=f13e138]:
+          - generic [ref=f13e139]: "Actualizar todos los precios:"
+          - spinbutton [ref=f13e140]: "0"
+          - generic [ref=f13e141]: "%"
+          - button "Aplicar" [ref=f13e142] [cursor=pointer]
+        - table [ref=f13e144]:
+          - rowgroup [ref=f13e145]:
+            - row [ref=f13e146]:
+              - columnheader "Nombre (ES)" [ref=f13e147]
+              - columnheader "Nombre (EN)" [ref=f13e148]
+              - columnheader "Descripción (ES)" [ref=f13e149]
+              - columnheader "Descripción (EN)" [ref=f13e150]
+              - columnheader "Precio" [ref=f13e151]
+              - columnheader "Acciones" [ref=f13e152]
+          - rowgroup [ref=f13e153]:
+            - row [ref=f13e154]:
+              - cell [ref=f13e155]:
+                - textbox [ref=f13e156]: Avena
+              - cell [ref=f13e157]:
+                - textbox [ref=f13e158]: Oatmeal
+              - cell [ref=f13e159]:
+                - textbox [ref=f13e160]: Galleta de avena con pasas y un toque de canela
+              - cell [ref=f13e161]:
+                - textbox [ref=f13e162]: Oatmeal cookie with raisins and a hint of cinnamon
+              - cell [ref=f13e163]:
+                - spinbutton [ref=f13e164]: "2.5"
+              - cell [ref=f13e165]:
+                - generic [ref=f13e166]:
+                  - button "Guardar" [ref=f13e167] [cursor=pointer]
+                  - button "Eliminar" [ref=f13e168] [cursor=pointer]
+            - row [ref=f13e169]:
+              - cell [ref=f13e170]:
+                - textbox [ref=f13e171]: Chocolate Chips
+              - cell [ref=f13e172]:
+                - textbox [ref=f13e173]: Chocolate Chips
+              - cell [ref=f13e174]:
+                - textbox [ref=f13e175]: Galleta clásica con pepitas de chocolate
+              - cell [ref=f13e176]:
+                - textbox [ref=f13e177]: Classic cookie with chocolate chunks
+              - cell [ref=f13e178]:
+                - spinbutton [ref=f13e179]: "2.5"
+              - cell [ref=f13e180]:
+                - generic [ref=f13e181]:
+                  - button "Guardar" [ref=f13e182] [cursor=pointer]
+                  - button "Eliminar" [ref=f13e183] [cursor=pointer]
+            - row [ref=f13e184]:
+              - cell [ref=f13e185]:
+                - textbox [ref=f13e186]: Red Velvet
+              - cell [ref=f13e187]:
+                - textbox [ref=f13e188]: Red Velvet
+              - cell [ref=f13e189]:
+                - textbox [ref=f13e190]: Galleta suave de cacao con cobertura de queso
+              - cell [ref=f13e191]:
+                - textbox [ref=f13e192]: Soft cocoa cookie with cream cheese topping
+              - cell [ref=f13e193]:
+                - spinbutton [ref=f13e194]: "3"
+              - cell [ref=f13e195]:
+                - generic [ref=f13e196]:
+                  - button "Guardar" [ref=f13e197] [cursor=pointer]
+                  - button "Eliminar" [ref=f13e198] [cursor=pointer]
+            - row [ref=f13e199]:
+              - cell [ref=f13e200]:
+                - textbox [ref=f13e201]: Mantequilla
+              - cell [ref=f13e202]:
+                - textbox [ref=f13e203]: Butter
+              - cell [ref=f13e204]:
+                - textbox [ref=f13e205]: Galleta de mantequilla tradicional, crujiente y suave
+              - cell [ref=f13e206]:
+                - textbox [ref=f13e207]: Traditional butter cookie, crispy and soft
+              - cell [ref=f13e208]:
+                - spinbutton [ref=f13e209]: "2"
+              - cell [ref=f13e210]:
+                - generic [ref=f13e211]:
+                  - button "Guardar" [ref=f13e212] [cursor=pointer]
+                  - button "Eliminar" [ref=f13e213] [cursor=pointer]
+            - row [ref=f13e214]:
+              - cell [ref=f13e215]:
+                - textbox [ref=f13e216]: Jengibre
+              - cell [ref=f13e217]:
+                - textbox [ref=f13e218]: Ginger
+              - cell [ref=f13e219]:
+                - textbox [ref=f13e220]: Galleta especiada de jengibre con un toque de canela
+              - cell [ref=f13e221]:
+                - textbox [ref=f13e222]: Spiced ginger cookie with a touch of cinnamon
+              - cell [ref=f13e223]:
+                - spinbutton [ref=f13e224]: "2.5"
+              - cell [ref=f13e225]:
+                - generic [ref=f13e226]:
+                  - button "Guardar" [ref=f13e227] [cursor=pointer]
+                  - button "Eliminar" [ref=f13e228] [cursor=pointer]
+            - row [ref=f13e229]:
+              - cell [ref=f13e230]:
+                - textbox [ref=f13e231]: Peanut Butter
+              - cell [ref=f13e232]:
+                - textbox [ref=f13e233]: Peanut Butter
+              - cell [ref=f13e234]:
+                - textbox [ref=f13e235]: Galleta cremosa de cacahuete
+              - cell [ref=f13e236]:
+                - textbox [ref=f13e237]: Creamy peanut butter cookie
+              - cell [ref=f13e238]:
+                - spinbutton [ref=f13e239]: "3"
+              - cell [ref=f13e240]:
+                - generic [ref=f13e241]:
+                  - button "Guardar" [ref=f13e242] [cursor=pointer]
+                  - button "Eliminar" [ref=f13e243] [cursor=pointer]
+        - generic [ref=f13e244]:
+          - heading "Añadir Galleta Nueva" [level=3] [ref=f13e245]
+          - generic [ref=f13e246]:
+            - generic [ref=f13e247]:
+              - generic [ref=f13e248]:
+                - generic [ref=f13e249]: Slug (identificador)
+                - textbox "Slug (identificador)" [ref=f13e250]:
+                  - /placeholder: mi-galleta
+              - generic [ref=f13e251]:
+                - generic [ref=f13e252]: Imagen
+                - textbox "Imagen" [ref=f13e253]:
+                  - /placeholder: imagen.jpg
+              - generic [ref=f13e254]:
+                - generic [ref=f13e255]: Precio (€)
+                - spinbutton "Precio (€)" [ref=f13e256]
+            - generic [ref=f13e257]:
+              - generic [ref=f13e258]:
+                - generic [ref=f13e259]: Nombre (ES)
+                - textbox "Nombre (ES)" [ref=f13e260]
+              - generic [ref=f13e261]:
+                - generic [ref=f13e262]: Nombre (EN)
+                - textbox "Nombre (EN)" [ref=f13e263]
+            - generic [ref=f13e264]:
+              - generic [ref=f13e265]:
+                - generic [ref=f13e266]: Descripción (ES)
+                - textbox "Descripción (ES)" [ref=f13e267]
+              - generic [ref=f13e268]:
+                - generic [ref=f13e269]: Descripción (EN)
+                - textbox "Descripción (EN)" [ref=f13e270]
+            - button "Crear Galleta" [ref=f13e271] [cursor=pointer]
