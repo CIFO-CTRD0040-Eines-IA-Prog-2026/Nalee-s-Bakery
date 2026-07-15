@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const pool = require('../db/connection');
 const { requiereSesion, requiereAdmin } = require('../middleware/sesion');
+const { enviarConfirmacionPedido } = require('../services/email');
 
 const router = Router();
 
@@ -59,13 +60,27 @@ router.patch('/admin/orders/:id/status', async (req, res) => {
   }
 
   try {
-    const [orders] = await pool.query('SELECT id, status FROM orders WHERE id = ?', [id]);
+    const [orders] = await pool.query('SELECT id, user_id, status, subtotal, discount, total, created_at FROM orders WHERE id = ?', [id]);
 
     if (orders.length === 0) {
       return res.status(404).json({ error: 'Pedido no encontrado' });
     }
 
+    const order = orders[0];
     await pool.query('UPDATE orders SET status = ? WHERE id = ?', [status, id]);
+
+    if (status === 'confirmed') {
+      const [users] = await pool.query('SELECT name, email FROM users WHERE id = ?', [order.user_id]);
+      const [lines] = await pool.query(
+        `SELECT ol.quantity, ol.unit_price, ol.subtotal, c.name_es AS cookie_name
+         FROM order_lines ol
+         JOIN cookies c ON c.id = ol.cookie_id
+         WHERE ol.order_id = ?`,
+        [id]
+      );
+
+      enviarConfirmacionPedido(users[0], order, lines);
+    }
 
     res.json({ message: 'Estado actualizado correctamente' });
   } catch (err) {

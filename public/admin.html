@@ -148,6 +148,27 @@
       gap: 0.5rem;
       flex-wrap: wrap;
     }
+    .order-main-row {
+      cursor: pointer;
+    }
+    .order-main-row:hover {
+      background: #f3e8ff !important;
+    }
+    .order-lines-row {
+      display: none;
+    }
+    .order-lines-row.open {
+      display: table-row;
+    }
+    .order-lines-table {
+      margin: 0;
+      background: #fafafa;
+    }
+    .order-lines-table th {
+      background: var(--color-marron);
+      color: white;
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
@@ -160,6 +181,7 @@
       </nav>
       <div class="header__actions">
         <a href="/" class="header__nav-link--login">Volver a tienda</a>
+        <span class="header__logout" id="btn-logout" onclick="cerrarSesion()">Cerrar sesión</span>
       </div>
       <button class="header__menu-btn" id="menu-btn" aria-label="Menú de navegación">
         <span></span><span></span><span></span>
@@ -267,6 +289,17 @@
       return response;
     }
 
+    async function cerrarSesion() {
+      try {
+        const res = await fetchWithAuth(`${API_BASE}/api/auth/logout`, { method: 'POST' });
+        if (res.ok) {
+          window.location.href = '/login';
+        }
+      } catch (e) {
+        console.error('Error al cerrar sesión:', e);
+      }
+    }
+
     async function loadOrders() {
       try {
         const response = await fetchWithAuth(`${API_BASE}/admin/orders`);
@@ -308,18 +341,36 @@
           'delivered': 'Entregado',
           'cancelled': 'Cancelado'
         }[order.status];
+        let linesHtml = '';
+        if (order.lines && order.lines.length > 0) {
+          linesHtml = '<tr class="order-lines-row"><td colspan="6"><table class="admin-table order-lines-table">' +
+            '<thead><tr><th>Producto</th><th>Precio ud.</th><th>Cantidad</th><th>Subtotal</th></tr></thead><tbody>';
+          for (const line of order.lines) {
+            linesHtml += `<tr>
+              <td>${line.cookie_name}</td>
+              <td>${line.unit_price.toFixed(2)} €</td>
+              <td>${line.quantity}</td>
+              <td>${line.subtotal.toFixed(2)} €</td>
+            </tr>`;
+          }
+          if (order.discount > 0) {
+            linesHtml += `<tr><td colspan="3" style="text-align:right;font-weight:600;">Descuento (10%)</td><td>-${order.discount.toFixed(2)} €</td></tr>`;
+          }
+          linesHtml += '</tbody></table></td></tr>';
+        }
         html += `
-          <tr>
+          <tr class="order-main-row" onclick="toggleOrderLines(this)">
             <td>#${order.id}</td>
             <td>${order.user_name}<br><small>${order.user_email}</small></td>
             <td>${date}</td>
             <td>${order.total.toFixed(2)} €</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
             <td>
-              ${order.status === 'pending' ? `<button class="btn btn-success" onclick="updateOrderStatus(${order.id}, 'confirmed')">Confirmar</button>` : ''}
-              ${order.status === 'confirmed' ? `<button class="btn btn-primary" onclick="updateOrderStatus(${order.id}, 'delivered')">Marcar entregado</button>` : ''}
+              ${order.status === 'pending' ? `<button class="btn btn-success" onclick="event.stopPropagation();updateOrderStatus(${order.id}, 'confirmed')">Confirmar</button>` : ''}
+              ${order.status === 'confirmed' ? `<button class="btn btn-primary" onclick="event.stopPropagation();updateOrderStatus(${order.id}, 'delivered')">Marcar entregado</button>` : ''}
             </td>
           </tr>
+          ${linesHtml}
         `;
       }
       html += `</tbody></table>`;
@@ -508,6 +559,13 @@
         alert(error.message || 'Error al crear la galleta');
       }
     });
+
+    function toggleOrderLines(clickedRow) {
+      const nextRow = clickedRow.nextElementSibling;
+      if (nextRow && nextRow.classList.contains('order-lines-row')) {
+        nextRow.classList.toggle('open');
+      }
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
       loadOrders();

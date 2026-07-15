@@ -4,12 +4,18 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 
 let db = null;
+const dbPath = path.resolve(process.env.DB_PATH || path.join(__dirname, '..', 'data', 'nalees_bakery.db'));
+
+function saveDb() {
+  if (!db) return;
+  const buf = db.export();
+  fs.writeFileSync(dbPath, buf);
+}
 
 async function getDb() {
   if (db) return db;
 
   const SQL = await initSqlJs();
-  const dbPath = path.resolve(process.env.DB_PATH || path.join(__dirname, '..', 'data', 'nalees_bakery.db'));
   const dbDir = path.dirname(dbPath);
   if (!fs.existsSync(dbDir)) {
     fs.mkdirSync(dbDir, { recursive: true });
@@ -139,6 +145,7 @@ class PoolWrapper {
     }
 
     database.run(trimmed, params);
+    saveDb();
 
     if (upper.startsWith('INSERT')) {
       const lastIdResult = database.exec('SELECT last_insert_rowid() AS id');
@@ -202,7 +209,7 @@ class TransactionConnection {
   }
 
   commit() {
-    if (!this._released) { this.db.run('COMMIT'); this._released = true; }
+    if (!this._released) { this.db.run('COMMIT'); saveDb(); this._released = true; }
   }
 
   rollback() {
