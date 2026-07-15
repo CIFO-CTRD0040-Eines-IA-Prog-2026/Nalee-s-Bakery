@@ -169,6 +169,42 @@
       color: white;
       font-size: 0.85rem;
     }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-box {
+      background: #b3d4f0;
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      max-width: 340px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      color: #1a3a5c;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+    }
+    .modal-box p {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .modal-actions .btn {
+      min-width: 80px;
+    }
   </style>
 </head>
 <body>
@@ -274,6 +310,16 @@
     </div>
   </main>
 
+  <div class="modal-overlay" id="modal-confirm">
+      <div class="modal-box">
+        <p id="modal-text">¿Confirmar?</p>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="modal-confirm-btn">Sí</button>
+          <button class="btn btn-secondary" id="modal-cancel-btn">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
   <script>
     const API_BASE = '';
 
@@ -377,12 +423,37 @@
       container.innerHTML = html;
     }
 
+    function customConfirm(message) {
+      return new Promise((resolve) => {
+        const overlay = document.getElementById('modal-confirm');
+        const text = document.getElementById('modal-text');
+        const confirmBtn = document.getElementById('modal-confirm-btn');
+        const cancelBtn = document.getElementById('modal-cancel-btn');
+
+        text.textContent = message;
+        overlay.classList.add('open');
+
+        function cleanup(accepted) {
+          overlay.classList.remove('open');
+          confirmBtn.removeEventListener('click', onConfirm);
+          cancelBtn.removeEventListener('click', onCancel);
+          resolve(accepted);
+        }
+        function onConfirm() { cleanup(true); }
+        function onCancel() { cleanup(false); }
+
+        confirmBtn.addEventListener('click', onConfirm);
+        cancelBtn.addEventListener('click', onCancel);
+      });
+    }
+
     async function updateOrderStatus(orderId, newStatus) {
       const statusText = {
         'confirmed': 'confirmar',
         'delivered': 'marcar como entregado'
       }[newStatus];
-      if (!confirm(`¿${statusText.charAt(0).toUpperCase() + statusText.slice(1)} el pedido #${orderId}?`)) return;
+      const confirmed = await customConfirm(`¿${statusText.charAt(0).toUpperCase() + statusText.slice(1)} el pedido #${orderId}?`);
+      if (!confirmed) return;
 
       try {
         const response = await fetchWithAuth(`${API_BASE}/admin/orders/${orderId}/status`, {
