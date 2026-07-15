@@ -1,0 +1,47 @@
+- generic [active] [ref=f12e1]:
+  - banner [ref=f12e2]:
+    - generic [ref=f12e3]:
+      - link "NALEE's Bakery" [ref=f12e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f12e5]:
+        - link "Galletas" [ref=f12e6] [cursor=pointer]:
+          - /url: /#galletas
+        - link "Galería" [ref=f12e7] [cursor=pointer]:
+          - /url: /#galeria
+        - link "Sobre Nosotros" [ref=f12e8] [cursor=pointer]:
+          - /url: /#nosotros
+        - link "Contacto" [ref=f12e9] [cursor=pointer]:
+          - /url: /#contacto
+  - main [ref=f12e10]:
+    - generic [ref=f12e11]:
+      - generic [ref=f12e12]: 👨‍🍳
+      - heading "Crear cuenta" [level=1] [ref=f12e13]
+      - generic [ref=f12e14]:
+        - generic [ref=f12e15]:
+          - generic [ref=f12e16]: Nombre
+          - textbox "Nombre" [ref=f12e17]:
+            - /placeholder: Tu nombre
+          - paragraph [ref=f12e18]
+        - generic [ref=f12e19]:
+          - generic [ref=f12e20]: Email
+          - textbox "Email" [ref=f12e21]:
+            - /placeholder: tu@email.com
+            - text: mario.test@example.com
+          - paragraph [ref=f12e22]
+        - generic [ref=f12e23]:
+          - generic [ref=f12e24]: Contraseña
+          - textbox "Contraseña" [ref=f12e25]:
+            - /placeholder: ••••••••
+            - text: "12345"
+          - paragraph [ref=f12e26]
+        - generic [ref=f12e27]:
+          - generic [ref=f12e28]: Confirmar contraseña
+          - textbox "Confirmar contraseña" [ref=f12e29]:
+            - /placeholder: ••••••••
+          - paragraph [ref=f12e30]
+        - paragraph [ref=f12e31]
+        - button "Crear cuenta" [ref=f12e32] [cursor=pointer]
+      - paragraph [ref=f12e33]:
+        - text: ¿Ya tienes cuenta?
+        - link "Iniciar sesión" [ref=f12e34] [cursor=pointer]:
+          - /url: /login

@@ -145,18 +145,14 @@ class PoolWrapper {
     }
 
     database.run(trimmed, params);
+    const lastIdResult = database.exec('SELECT last_insert_rowid() AS id');
+    const changesResult = database.exec('SELECT changes() AS changes');
     saveDb();
-
+    const insertId = lastIdResult[0] ? lastIdResult[0].values[0][0] : 0;
+    const affectedRows = changesResult[0] ? changesResult[0].values[0][0] : 0;
     if (upper.startsWith('INSERT')) {
-      const lastIdResult = database.exec('SELECT last_insert_rowid() AS id');
-      const changesResult = database.exec('SELECT changes() AS changes');
-      const insertId = lastIdResult[0] ? lastIdResult[0].values[0][0] : 0;
-      const affectedRows = changesResult[0] ? changesResult[0].values[0][0] : 0;
       return [{ insertId: Number(insertId), affectedRows }];
     }
-
-    const changesResult = database.exec('SELECT changes() AS changes');
-    const affectedRows = changesResult[0] ? changesResult[0].values[0][0] : 0;
     return [{ affectedRows }];
   }
 
