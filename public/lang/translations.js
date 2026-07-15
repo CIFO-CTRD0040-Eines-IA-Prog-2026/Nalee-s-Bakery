@@ -79,7 +79,12 @@ var translations = {
     mis_pedidos_pending: 'Pendiente',
     mis_pedidos_cancelled: 'Cancelado',
     mis_pedidos_confirmed: 'Confirmado',
-    mis_pedidos_shipped: 'Enviado'
+    mis_pedidos_delivered: 'Entregado',
+    mis_pedidos_shipped: 'Enviado',
+    confirmacion_title: '¡Pedido realizado!',
+    confirmacion_numero: 'Pedido #',
+    confirmacion_detalles: 'Detalles del pedido:',
+    confirmacion_cerrar: 'Seguir comprando'
   },
 
   en: {
@@ -162,6 +167,11 @@ var translations = {
     mis_pedidos_pending: 'Pending',
     mis_pedidos_cancelled: 'Cancelled',
     mis_pedidos_confirmed: 'Confirmed',
-    mis_pedidos_shipped: 'Shipped'
+    mis_pedidos_delivered: 'Delivered',
+    mis_pedidos_shipped: 'Shipped',
+    confirmacion_title: 'Order placed!',
+    confirmacion_numero: 'Order #',
+    confirmacion_detalles: 'Order details:',
+    confirmacion_cerrar: 'Continue shopping'
   }
 };

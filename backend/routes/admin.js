@@ -79,7 +79,7 @@ router.patch('/admin/orders/:id/status', async (req, res) => {
         [id]
       );
 
-      enviarConfirmacionPedido(users[0], order, lines);
+      enviarConfirmacionPedido(users[0], order, lines, 'es');
     }
 
     res.json({ message: 'Estado actualizado correctamente' });

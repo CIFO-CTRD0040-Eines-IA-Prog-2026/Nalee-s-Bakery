@@ -4,6 +4,7 @@ async function cargarCatalogo() {
     if (!res.ok) throw new Error('Error al cargar el catálogo');
     const cookies = await res.json();
 
+    window.cookieMap = {};
     cookies.forEach(function (cookie) {
       var galleta = document.querySelector('.galleta[data-sabor="' + cookie.slug + '"]');
       if (!galleta) return;
@@ -19,6 +20,12 @@ async function cargarCatalogo() {
       translations.es[keyBase + '_desc'] = cookie.desc_es;
       translations.en[keyBase + '_nombre'] = cookie.name_en;
       translations.en[keyBase + '_desc'] = cookie.desc_en;
+
+      window.cookieMap[cookie.id] = {
+        nombre_es: cookie.name_es,
+        nombre_en: cookie.name_en,
+        slug: cookie.slug
+      };
     });
 
     if (typeof applyTranslations === 'function') {
@@ -141,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       if (res.ok) {
-        alert('Pedido enviado correctamente');
+        var order = await res.json();
+        mostrarConfirmacion(order);
         galletas.forEach(function (g) {
           g.querySelector('.galleta__cantidad').value = 0;
         });
@@ -154,6 +162,67 @@ document.addEventListener('DOMContentLoaded', function () {
     } catch (e) {
       alert('Error de conexión');
     }
+  });
+
+  function mostrarConfirmacion(order) {
+    try {
+      var overlay = document.getElementById('modal-overlay');
+      if (!overlay) { console.error('modal-overlay not found'); return; }
+      var modalLogin = document.getElementById('modal-login');
+      var modalReg = document.getElementById('modal-registro');
+      var modalConf = document.getElementById('modal-confirmacion');
+      if (!modalConf) { console.error('modal-confirmacion not found'); return; }
+
+      if (modalLogin) modalLogin.style.display = 'none';
+      if (modalReg) modalReg.style.display = 'none';
+      modalConf.style.display = 'block';
+
+      var idEl = document.getElementById('confirmacion-id');
+      if (idEl) idEl.textContent = order.id;
+      else console.error('confirmacion-id not found');
+
+      var lista = document.getElementById('confirmacion-lista');
+      var lang = typeof currentLang !== 'undefined' ? currentLang : 'es';
+      if (lista) {
+        lista.innerHTML = '';
+        if (order.lines) {
+          order.lines.forEach(function (line) {
+            var cookieData = window.cookieMap && window.cookieMap[line.cookie_id];
+            var nombre = cookieData ? (cookieData['nombre_' + lang] || cookieData.nombre_es) : 'Galleta #' + line.cookie_id;
+            var li = document.createElement('li');
+            li.innerHTML = '<span>' + nombre + ' \u00d7 ' + line.quantity + '</span><span>' + parseFloat(line.subtotal).toFixed(2) + ' \u20ac</span>';
+            lista.appendChild(li);
+          });
+        }
+      }
+
+      var subEl = document.getElementById('confirmacion-subtotal');
+      if (subEl) subEl.textContent = parseFloat(order.subtotal).toFixed(2);
+      var descEl = document.getElementById('confirmacion-descuento');
+      if (descEl) descEl.textContent = '-' + parseFloat(order.discount).toFixed(2);
+      var totalEl = document.getElementById('confirmacion-total');
+      if (totalEl) totalEl.textContent = parseFloat(order.total).toFixed(2);
+
+      var statusKey = 'mis_pedidos_' + order.status;
+      var statusText = (typeof translations !== 'undefined' && translations[lang] && translations[lang][statusKey]) ? translations[lang][statusKey] : order.status;
+      var statusEl = document.getElementById('confirmacion-status');
+      if (statusEl) statusEl.textContent = statusText;
+
+      overlay.classList.add('modal-overlay--open');
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    } catch (e) {
+      console.error('Error en mostrarConfirmacion:', e);
+    }
+  }
+
+  document.getElementById('confirmacion-cerrar').addEventListener('click', function () {
+    var overlay = document.getElementById('modal-overlay');
+    var modalConf = document.getElementById('modal-confirmacion');
+    overlay.classList.remove('modal-overlay--open');
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+    modalConf.style.display = 'none';
   });
 
   cargarCatalogo();

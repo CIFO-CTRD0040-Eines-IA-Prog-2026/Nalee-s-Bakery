@@ -2,10 +2,53 @@ const nodemailer = require('nodemailer');
 
 let transporter = null;
 
-function templateConfirmacion({ cliente, pedido, lines }) {
-  const date = new Date(pedido.created_at).toLocaleDateString('es-ES', {
+function templateConfirmacion({ cliente, pedido, lines, lang }) {
+  lang = lang || 'es';
+  const locale = lang === 'en' ? 'en-EN' : 'es-ES';
+  const date = new Date(pedido.created_at).toLocaleDateString(locale, {
     year: 'numeric', month: 'long', day: 'numeric'
   });
+
+  const texts = {
+    es: {
+      tagline: 'Repostería artesana desde 2024',
+      greeting: 'Hola,',
+      thanks: '¡Gracias por tu compra! Hemos recibido tu pedido y lo hemos confirmado. En breve lo recibirás en casa.',
+      orderLabel: 'Pedido',
+      dateLabel: 'Fecha',
+      statusLabel: 'Estado',
+      statusValue: 'Confirmado',
+      thProduct: 'Producto',
+      thQty: 'Cant.',
+      thPrice: 'Precio ud.',
+      thSubtotal: 'Subtotal',
+      discount: 'Descuento (10%)',
+      total: 'Total',
+      help: 'Si tienes cualquier duda, puedes responder este correo o contactar con nosotros.',
+      footer: 'Repostería artesana hecha con amor',
+      footerThanks: 'Gracias por confiar en nosotros'
+    },
+    en: {
+      tagline: 'Artisan bakery since 2024',
+      greeting: 'Hello,',
+      thanks: 'Thank you for your purchase! We have received your order and confirmed it. You will receive it at home shortly.',
+      orderLabel: 'Order',
+      dateLabel: 'Date',
+      statusLabel: 'Status',
+      statusValue: 'Confirmed',
+      thProduct: 'Product',
+      thQty: 'Qty',
+      thPrice: 'Unit price',
+      thSubtotal: 'Subtotal',
+      discount: 'Discount (10%)',
+      total: 'Total',
+      help: 'If you have any questions, feel free to reply to this email or contact us.',
+      footer: 'Artisan bakery made with love',
+      footerThanks: 'Thank you for trusting us'
+    }
+  };
+
+  const t = texts[lang] || texts.es;
 
   let linesHtml = '';
   for (const line of lines) {
@@ -18,7 +61,7 @@ function templateConfirmacion({ cliente, pedido, lines }) {
   }
 
   return `<!DOCTYPE html>
-<html lang="es">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,21 +91,21 @@ function templateConfirmacion({ cliente, pedido, lines }) {
   <div class="container">
     <div class="header">
       <h1>NALEE's Bakery</h1>
-      <p>Repostería artesana desde 2024</p>
+      <p>${t.tagline}</p>
     </div>
     <div class="body">
-      <p class="greeting">Hola, <strong>${cliente.name}</strong>,</p>
-      <p style="font-size:15px;color:#4a3030;line-height:1.6;">¡Gracias por tu compra! Hemos recibido tu pedido y lo hemos confirmado. En breve lo recibirás en casa.</p>
+      <p class="greeting">${t.greeting} <strong>${cliente.name}</strong>,</p>
+      <p style="font-size:15px;color:#4a3030;line-height:1.6;">${t.thanks}</p>
 
       <div class="order-info">
-        <span><strong>Pedido #${pedido.id}</strong></span>
-        <span>Fecha: ${date}</span>
-        <span>Estado: <strong style="color:#065f46;">Confirmado</strong></span>
+        <span><strong>${t.orderLabel} #${pedido.id}</strong></span>
+        <span>${t.dateLabel}: ${date}</span>
+        <span>${t.statusLabel}: <strong style="color:#065f46;">${t.statusValue}</strong></span>
       </div>
 
       <table>
         <thead>
-          <tr><th>Producto</th><th style="text-align:center;">Cant.</th><th style="text-align:center;">Precio ud.</th><th style="text-align:right;">Subtotal</th></tr>
+          <tr><th>${t.thProduct}</th><th style="text-align:center;">${t.thQty}</th><th style="text-align:center;">${t.thPrice}</th><th style="text-align:right;">${t.thSubtotal}</th></tr>
         </thead>
         <tbody>
           ${linesHtml}
@@ -71,17 +114,17 @@ function templateConfirmacion({ cliente, pedido, lines }) {
 
       <table style="margin-top:0;">
         <tbody>
-          ${pedido.discount > 0 ? `<tr class="discount-row"><td colspan="3" style="text-align:right;border:none;">Descuento (10%):</td><td style="text-align:right;border:none;">-${pedido.discount.toFixed(2)} €</td></tr>` : ''}
-          <tr class="total-row"><td colspan="3" style="text-align:right;border:none;">Total:</td><td style="text-align:right;border:none;">${pedido.total.toFixed(2)} €</td></tr>
+          ${pedido.discount > 0 ? `<tr class="discount-row"><td colspan="3" style="text-align:right;border:none;">${t.discount}:</td><td style="text-align:right;border:none;">-${pedido.discount.toFixed(2)} €</td></tr>` : ''}
+          <tr class="total-row"><td colspan="3" style="text-align:right;border:none;">${t.total}:</td><td style="text-align:right;border:none;">${pedido.total.toFixed(2)} €</td></tr>
         </tbody>
       </table>
 
-      <p style="font-size:14px;color:#8a7060;margin-top:20px;">Si tienes cualquier duda, puedes responder este correo o contactar con nosotros.</p>
+      <p style="font-size:14px;color:#8a7060;margin-top:20px;">${t.help}</p>
     </div>
     <div class="footer">
       <strong>NALEE's Bakery</strong><br>
-      Repostería artesana hecha con amor<br>
-      <span style="color:#8a7060;">Gracias por confiar en nosotros</span>
+      ${t.footer}<br>
+      <span style="color:#8a7060;">${t.footerThanks}</span>
     </div>
   </div>
 </body>
@@ -118,15 +161,19 @@ async function getTransporter() {
   return transporter;
 }
 
-async function enviarConfirmacionPedido(cliente, pedido, lines) {
+async function enviarConfirmacionPedido(cliente, pedido, lines, lang) {
   try {
     const transport = await getTransporter();
-    const html = templateConfirmacion({ cliente, pedido, lines });
+    const html = templateConfirmacion({ cliente, pedido, lines, lang });
 
+    lang = lang || 'es';
+    const subjectText = lang === 'en'
+      ? `Order #${pedido.id} confirmed — NALEE's Bakery`
+      : `Pedido #${pedido.id} confirmado — NALEE's Bakery`;
     const info = await transport.sendMail({
       from: '"NALEE\'s Bakery" <pedidos@naleesbakery.com>',
       to: `${cliente.name} <${cliente.email}>`,
-      subject: `Pedido #${pedido.id} confirmado — NALEE's Bakery`,
+      subject: subjectText,
       html
     });
 

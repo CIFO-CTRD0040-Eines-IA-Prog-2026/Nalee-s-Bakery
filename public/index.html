@@ -340,6 +340,23 @@
           <a href="#" id="modal-to-login" data-i18n="auth_entrar_link">Iniciar sesión</a>
         </p>
       </div>
+
+      <div id="modal-confirmacion" style="display:none;">
+        <div class="modal__icon modal-confirmacion__icon">🎉</div>
+        <h2 class="modal__title" data-i18n="confirmacion_title">¡Pedido realizado!</h2>
+        <p class="modal-confirmacion__id"><span data-i18n="confirmacion_numero">Pedido #</span><span id="confirmacion-id"></span></p>
+        <div class="modal-confirmacion__detalles">
+          <p class="modal-confirmacion__label" data-i18n="confirmacion_detalles">Detalles del pedido:</p>
+          <ul class="modal-confirmacion__lista" id="confirmacion-lista"></ul>
+          <div class="modal-confirmacion__totales">
+            <p class="modal-confirmacion__linea"><span data-i18n="pedido_subtotal">Subtotal</span>: <span id="confirmacion-subtotal">0.00</span> €</p>
+            <p class="modal-confirmacion__linea"><span data-i18n="pedido_descuento">Descuento</span>: <span id="confirmacion-descuento">0.00</span> €</p>
+            <p class="modal-confirmacion__linea modal-confirmacion__linea--total"><span data-i18n="pedido_total">Total</span>: <span id="confirmacion-total">0.00</span> €</p>
+          </div>
+        </div>
+        <p class="modal-confirmacion__status"><span data-i18n="confirmacion_status">Estado:</span> <strong id="confirmacion-status">Pendiente</strong></p>
+        <button class="modal__btn" id="confirmacion-cerrar" data-i18n="confirmacion_cerrar">Seguir comprando</button>
+      </div>
     </div>
   </div>
 
