@@ -1,0 +1,76 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "NALEE's Bakery" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "Tienda" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Panel Admin" [ref=e7] [cursor=pointer]:
+          - /url: /admin
+      - generic [ref=e8]:
+        - link "Volver a tienda" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e10] [cursor=pointer]: Cerrar sesión
+  - main [ref=e11]:
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - heading "Panel de Administración" [level=1] [ref=e14]
+        - generic [ref=e15]:
+          - link "Pedidos" [ref=e16] [cursor=pointer]:
+            - /url: "#pedidos"
+          - link "Confirmación" [ref=e17] [cursor=pointer]:
+            - /url: "#confirmacion"
+          - link "General" [ref=e18] [cursor=pointer]:
+            - /url: "#general"
+      - generic [ref=e19]:
+        - heading "Pedidos Recibidos" [level=2] [ref=e20]
+        - paragraph [ref=e22]: Error al cargar los pedidos.
+      - generic [ref=e23]:
+        - heading "Confirmación de Pedidos" [level=2] [ref=e24]
+        - paragraph [ref=e25]: "Selecciona un pedido de la lista superior para cambiar su estado:"
+        - list [ref=e26]:
+          - listitem [ref=e27]:
+            - strong [ref=e28]: "Pendiente → Confirmado:"
+            - text: Cuando el admin acepta el pedido
+          - listitem [ref=e29]:
+            - strong [ref=e30]: "Confirmado → Entregado:"
+            - text: Cuando el cliente recibe el pedido
+      - generic [ref=e31]:
+        - heading "Cambios Generales" [level=2] [ref=e32]
+        - generic [ref=e33]:
+          - generic [ref=e34]: "Actualizar todos los precios:"
+          - spinbutton [ref=e35]: "0"
+          - generic [ref=e36]: "%"
+          - button "Aplicar" [ref=e37] [cursor=pointer]
+        - paragraph [ref=e39]: Error al cargar las galletas.
+        - generic [ref=e40]:
+          - heading "Añadir Galleta Nueva" [level=3] [ref=e41]
+          - generic [ref=e42]:
+            - generic [ref=e43]:
+              - generic [ref=e44]:
+                - generic [ref=e45]: Slug (identificador)
+                - textbox "Slug (identificador)" [ref=e46]:
+                  - /placeholder: mi-galleta
+              - generic [ref=e47]:
+                - generic [ref=e48]: Imagen
+                - textbox "Imagen" [ref=e49]:
+                  - /placeholder: imagen.jpg
+              - generic [ref=e50]:
+                - generic [ref=e51]: Precio (€)
+                - spinbutton "Precio (€)" [ref=e52]
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - generic [ref=e55]: Nombre (ES)
+                - textbox "Nombre (ES)" [ref=e56]
+              - generic [ref=e57]:
+                - generic [ref=e58]: Nombre (EN)
+                - textbox "Nombre (EN)" [ref=e59]
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - generic [ref=e62]: Descripción (ES)
+                - textbox "Descripción (ES)" [ref=e63]
+              - generic [ref=e64]:
+                - generic [ref=e65]: Descripción (EN)
+                - textbox "Descripción (EN)" [ref=e66]
+            - button "Crear Galleta" [ref=e67] [cursor=pointer]

@@ -1,6 +1,15 @@
 const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
 
 let transporter = null;
+
+const EMAIL_LOG = path.resolve(__dirname, '..', 'emails-enviados.log');
+
+function logEmail(cliente, pedido, previewUrl) {
+  const line = `[${new Date().toISOString()}] Pedido #${pedido.id} | ${cliente.name} <${cliente.email}> | ${previewUrl}\n`;
+  fs.appendFileSync(EMAIL_LOG, line, 'utf-8');
+}
 
 function templateConfirmacion({ cliente, pedido, lines, lang }) {
   lang = lang || 'es';
@@ -182,6 +191,7 @@ async function enviarConfirmacionPedido(cliente, pedido, lines, lang) {
     } else {
       const previewUrl = nodemailer.getTestMessageUrl(info);
       console.log(`Correo de prueba (Ethereal): ${previewUrl}`);
+      logEmail(cliente, pedido, previewUrl);
     }
 
     return true;
