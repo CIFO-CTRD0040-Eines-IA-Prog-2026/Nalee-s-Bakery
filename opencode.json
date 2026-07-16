@@ -11,7 +11,7 @@
     },
     "playwright": {
       "type": "local",
-      "command": ["npx", "@playwright/mcp@latest"],
+      "command": ["npx.cmd", "@playwright/mcp@latest"],
       "enabled": true
     }
   }

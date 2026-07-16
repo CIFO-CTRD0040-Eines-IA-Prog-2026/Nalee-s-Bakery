@@ -1,0 +1,166 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "NALEE's Bakery" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+      - navigation [ref=e5]:
+        - link "Cookies" [ref=e168] [cursor=pointer]:
+          - /url: "#galletas"
+        - link "Gallery" [ref=e169] [cursor=pointer]:
+          - /url: "#galeria"
+        - link "About Us" [ref=e170] [cursor=pointer]:
+          - /url: "#nosotros"
+        - link "Testimonials" [ref=e171] [cursor=pointer]:
+          - /url: "#testimonios"
+        - link "Contact" [ref=e172] [cursor=pointer]:
+          - /url: "#contacto"
+      - generic [ref=e11]:
+        - button "Seleccionar idioma" [ref=e13] [cursor=pointer]: EN
+        - link "Sign in" [ref=e173] [cursor=pointer]:
+          - /url: "#"
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - heading "Handmade cookies with love" [level=1] [ref=e174]
+      - paragraph [ref=e19]: "Discover the authentic taste of our traditional recipes, made with natural ingredients and our secret ingredient: lots and lots of love."
+      - link "Discover our cookies" [ref=e175] [cursor=pointer]:
+        - /url: "#galletas"
+    - generic [ref=e22]:
+      - heading "Our Cookies" [level=2] [ref=e176]
+      - generic [ref=e24]:
+        - article [ref=e25]:
+          - heading "Oatmeal" [level=3] [ref=e177]
+          - paragraph [ref=e28]: Oatmeal cookie with raisins and a hint of cinnamon
+          - paragraph [ref=e29]: 2.50 €
+          - generic [ref=e30]:
+            - button "Reducir cantidad" [ref=e31] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=e32]: "0"
+            - button "Aumentar cantidad" [ref=e33] [cursor=pointer]: +
+        - article [ref=e34]:
+          - heading "Chocolate Chips" [level=3] [ref=e36]
+          - paragraph [ref=e37]: Classic cookie with chocolate chunks
+          - paragraph [ref=e38]: 2.50 €
+          - generic [ref=e39]:
+            - button "Reducir cantidad" [ref=e40] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=e41]: "0"
+            - button "Aumentar cantidad" [ref=e42] [cursor=pointer]: +
+        - article [ref=e43]:
+          - heading "Red Velvet" [level=3] [ref=e45]
+          - paragraph [ref=e46]: Soft cocoa cookie with cream cheese topping
+          - paragraph [ref=e47]: 3.00 €
+          - generic [ref=e48]:
+            - button "Reducir cantidad" [ref=e49] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=e50]: "0"
+            - button "Aumentar cantidad" [ref=e51] [cursor=pointer]: +
+        - article [ref=e52]:
+          - heading "Butter" [level=3] [ref=e178]
+          - paragraph [ref=e55]: Traditional butter cookie, crispy and soft
+          - paragraph [ref=e56]: 2.00 €
+          - generic [ref=e57]:
+            - button "Reducir cantidad" [ref=e58] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=e59]: "0"
+            - button "Aumentar cantidad" [ref=e60] [cursor=pointer]: +
+        - article [ref=e61]:
+          - heading "Ginger" [level=3] [ref=e179]
+          - paragraph [ref=e64]: Spiced ginger cookie with a touch of cinnamon
+          - paragraph [ref=e65]: 2.50 €
+          - generic [ref=e66]:
+            - button "Reducir cantidad" [ref=e67] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=e68]: "0"
+            - button "Aumentar cantidad" [ref=e69] [cursor=pointer]: +
+        - article [ref=e70]:
+          - heading "Peanut Butter" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Creamy peanut butter cookie
+          - paragraph [ref=e74]: 3.00 €
+          - generic [ref=e75]:
+            - button "Reducir cantidad" [ref=e76] [cursor=pointer]: −
+            - spinbutton "Cantidad" [ref=e77]: "0"
+            - button "Aumentar cantidad" [ref=e78] [cursor=pointer]: +
+    - generic [ref=e80]:
+      - heading "Gallery" [level=2] [ref=e180]
+      - generic [ref=e82]:
+        - img "Galleta de chocolate chips" [ref=e84]
+        - img "Galleta red velvet" [ref=e86]
+        - img "Galleta de avena" [ref=e88]
+        - img "Galleta de mantequilla" [ref=e90]
+        - img "Galleta de jengibre" [ref=e92]
+        - img "Galleta de peanut butter" [ref=e94]
+    - generic [ref=e96]:
+      - generic [ref=e97]:
+        - heading "About Us" [level=2] [ref=e181]
+        - paragraph [ref=e99]: At NALEE's Bakery we have been sweetening our customers' lives for 2 years. Each cookie is handmade with selected ingredients, following traditional recipes passed down through generations.
+        - paragraph [ref=e100]: Our passion for artisan baking drives us to constantly innovate, creating unique flavors that combine the best of tradition with a modern touch.
+      - generic:
+        - img "Nalee horneando galletas"
+    - generic [ref=e102]:
+      - heading "What our customers say" [level=2] [ref=e182]
+      - generic [ref=e104]:
+        - article [ref=e105]:
+          - img "Ana Martínez" [ref=e107]
+          - paragraph [ref=e108]: "\"The best cookies I have ever tasted. The red velvet is incredible, and the service is always excellent.\""
+          - paragraph [ref=e109]: Ana Martinez
+          - paragraph [ref=e110]: Regular customer
+        - article [ref=e111]:
+          - img "Carlos López" [ref=e113]
+          - paragraph [ref=e114]: "\"I order every week for the office. Everyone loves them, especially the chocolate chips.\""
+          - paragraph [ref=e115]: Carlos Lopez
+          - paragraph [ref=e116]: Corporate client
+        - article [ref=e117]:
+          - img "Maria García" [ref=e119]
+          - paragraph [ref=e120]: "\"The homemade flavor takes me back to my grandmother's kitchen. Quality and love in every bite.\""
+          - paragraph [ref=e121]: Maria Garcia
+          - paragraph [ref=e122]: Loyal customer
+    - generic [ref=e124]:
+      - generic [ref=e125]:
+        - heading "Visit Us" [level=2] [ref=e183]
+        - paragraph [ref=e127]: Calle del Dulce, 42, 08001 Barcelona
+        - paragraph [ref=e128]:
+          - strong [ref=e129]: "Hours:"
+          - text: "Mon–Fri: 9:00 – 20:00 Sat: 10:00 – 21:00 Sun: 10:00 – 14:00"
+        - paragraph [ref=e130]: "Tel: +34 932 123 456"
+      - iframe [ref=e132]:
+        - link "Abrir en Maps (se abre en una nueva pestaña)" [ref=f1e4] [cursor=pointer]:
+          - /url: undefined
+          - text: Abrir en Maps
+    - generic [ref=e134]:
+      - heading "Contact" [level=2] [ref=e184]
+      - generic [ref=e136]:
+        - textbox "Nombre" [ref=e137]:
+          - /placeholder: Name
+        - textbox "Email" [ref=e138]
+        - textbox "Mensaje" [ref=e139]:
+          - /placeholder: Message
+        - button "Send message" [ref=e185] [cursor=pointer]
+  - contentinfo [ref=e141]:
+    - generic [ref=e142]:
+      - generic [ref=e143]:
+        - heading "NALEE's Bakery" [level=3] [ref=e144]
+        - paragraph [ref=e145]: Handmade cookies made with love and the best ingredients since 2014.
+      - generic [ref=e146]:
+        - heading "Links" [level=4] [ref=e186]
+        - link "Cookies" [ref=e187] [cursor=pointer]:
+          - /url: "#galletas"
+        - link "Gallery" [ref=e188] [cursor=pointer]:
+          - /url: "#galeria"
+        - link "About Us" [ref=e189] [cursor=pointer]:
+          - /url: "#nosotros"
+        - link "Contact" [ref=e190] [cursor=pointer]:
+          - /url: "#contacto"
+      - generic [ref=e152]:
+        - heading "Follow us" [level=4] [ref=e191]
+        - generic [ref=e154]:
+          - link "Facebook" [ref=e155] [cursor=pointer]:
+            - /url: "#"
+            - text: FB
+          - link "Instagram" [ref=e156] [cursor=pointer]:
+            - /url: "#"
+            - text: IG
+          - link "Twitter" [ref=e157] [cursor=pointer]:
+            - /url: "#"
+            - text: TW
+      - generic [ref=e158]:
+        - heading "Newsletter" [level=4] [ref=e159]
+        - generic [ref=e160]:
+          - textbox "Email para newsletter" [ref=e161]:
+            - /placeholder: Your email
+          - button "Subscribe" [ref=e192] [cursor=pointer]
+    - paragraph [ref=e164]: © 2024 NALEE's Bakery. All rights reserved.

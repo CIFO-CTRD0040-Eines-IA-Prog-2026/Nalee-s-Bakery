@@ -7,6 +7,19 @@ const router = Router();
 
 router.use(requiereSesion, requiereAdmin);
 
+router.get('/admin/data', async (req, res) => {
+  try {
+    const [users] = await pool.query('SELECT id, name, email, role, lang, created_at FROM users ORDER BY id');
+    const [cookies] = await pool.query('SELECT id, slug, name_es, name_en, desc_es, desc_en, price, image FROM cookies ORDER BY id');
+    const [orders] = await pool.query('SELECT id, user_id, subtotal, discount, total, status, created_at FROM orders ORDER BY created_at DESC');
+    const [orderLines] = await pool.query('SELECT id, order_id, cookie_id, quantity, unit_price, subtotal FROM order_lines ORDER BY id');
+    res.json({ users, cookies, orders, order_lines: orderLines });
+  } catch (err) {
+    console.error('Error obteniendo datos admin:', err);
+    res.status(500).json({ error: 'Error al obtener datos' });
+  }
+});
+
 router.get('/admin/orders', async (req, res) => {
   try {
     const [orders] = await pool.query(
